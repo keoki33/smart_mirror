@@ -14,7 +14,11 @@ class App extends Component {
       <div className="card">
         <Router>
           <Switch>
-            <Route exact path="/" render={props => <Home {...props} />} />
+            <Route
+              exact
+              path={["/", "smart_mirror"]}
+              render={props => <Home {...props} />}
+            />
           </Switch>
         </Router>
       </div>
