@@ -11,7 +11,7 @@ class App extends Component {
     commandList: [],
     commandValue: "",
     commandKey: "",
-    on: true
+    on: "true"
   };
 
   whatever = () => {};
@@ -23,9 +23,7 @@ class App extends Component {
     //   .then(x => this.setState({ Status: x, loading: false }));
     ///////////////////
 
-    var cable = ActionCable.createConsumer(
-      "ws://https://0906cc06.eu.ngrok.io/cable"
-    );
+    var cable = ActionCable.createConsumer("ws://localhost:3000/cable");
 
     cable.subscriptions.create("UpdateChannel", {
       received: data => {
@@ -45,7 +43,7 @@ class App extends Component {
         <Navbar />
         <Router>
           <Switch>
-            {this.state.on == "true" && (
+            {this.state.on === "true" && (
               <Route
                 exact
                 path={["/", "smart_mirror"]}
