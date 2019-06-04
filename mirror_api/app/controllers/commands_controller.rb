@@ -43,6 +43,10 @@ class CommandsController < ApplicationController
     puts params["queryResult"]["parameters"].values
     @command = Command.create(key: params["queryResult"]["parameters"].keys[0], value: params["queryResult"]["parameters"].values[0], user_id:1)
     puts @command.key
+    ActionCable.server.broadcast 'update_channel',
+    key: @command.key,
+    value: @command.value
+    head :ok
   end
 
  
