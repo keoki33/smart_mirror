@@ -6,7 +6,7 @@ class Tfl extends Component {
   state = { Status: [], commandList: [], commandValue: "", commandKey: "" };
 
   componentDidMount() {
-    this.timer = setInterval(() => this.getItems(), 1000);
+    // this.timer = setInterval(() => this.getItems(), 1000);
     fetch("https://api.tfl.gov.uk/Line/dlr/Status?detail=false")
       .then(resp => resp.json())
       .then(x => this.setState({ Status: x, loading: false }));
