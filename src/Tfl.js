@@ -3,10 +3,10 @@ import React, { Component } from "react";
 // import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class Tfl extends Component {
-  state = { Status: [], score: [], chosen: 0 };
+  state = { Status: [], commandList: [], commandValue: "", commandKey: "" };
 
   componentDidMount() {
-    // this.timer = setInterval(() => this.getItems(), 1000);
+    this.timer = setInterval(() => this.getItems(), 1000);
     fetch("https://api.tfl.gov.uk/Line/dlr/Status?detail=false")
       .then(resp => resp.json())
       .then(x => this.setState({ Status: x, loading: false }));
@@ -22,12 +22,13 @@ class Tfl extends Component {
   }
 
   getItems() {
-    fetch("http://localhost:3000/scores")
+    fetch("http://localhost:3000/commands")
       .then(result => result.json())
       .then(result =>
         this.setState({
-          score: result,
-          chosen: result[result.length - 1]["score"]
+          commandList: result,
+          commandValue: result[result.length - 1]["value"],
+          commandKey: result[result.length - 1]["key"]
         })
       );
 
@@ -40,7 +41,9 @@ class Tfl extends Component {
       <div className="card">
         <h1>TFL</h1>
         <h1>Test deploy</h1>
-        <h1>Chosen # {this.state.chosen}</h1>
+        <h1>Command Key: {this.state.commandKey}</h1>
+        <h1>Command Value: {this.state.commandValue}</h1>
+
         {this.displayStatus()}
       </div>
     );
