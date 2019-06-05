@@ -23,9 +23,7 @@ class App extends Component {
     //   .then(x => this.setState({ Status: x, loading: false }));
     ///////////////////
 
-    var cable = ActionCable.createConsumer(
-      "wss:https://0906cc06.eu.ngrok.io/cable"
-    );
+    var cable = ActionCable.createConsumer("wss://0906cc06.eu.ngrok.io/cable");
 
     cable.subscriptions.create("UpdateChannel", {
       received: data => {
