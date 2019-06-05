@@ -50,7 +50,7 @@ body {
   /* overflow: hidden; */
 
   border: 1px solid #ffffff;
-  height: 50vh;
+  height: 40vh;
   width: auto;
   /* float: left; */
 
@@ -67,4 +67,9 @@ body {
 .card > iframe {
   max-width: 100%;
   max-height: 100%;
+}
+
+.quote {
+  width: 100px;
+  max-height: 40%;
 }
