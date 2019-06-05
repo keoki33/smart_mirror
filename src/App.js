@@ -24,7 +24,7 @@ class App extends Component {
     ///////////////////
 
     var cable = ActionCable.createConsumer(
-      "wss:http://0906cc06.eu.ngrok.io/cable"
+      "wss:https://0906cc06.eu.ngrok.io/cable"
     );
 
     cable.subscriptions.create("UpdateChannel", {
