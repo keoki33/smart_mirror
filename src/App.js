@@ -11,7 +11,7 @@ class App extends Component {
     commandList: [],
     commandValue: "",
     commandKey: "",
-    on: "true"
+    on: "false"
   };
 
   whatever = () => {};
