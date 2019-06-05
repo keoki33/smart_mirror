@@ -1,5 +1,7 @@
 body {
-  background: #eeeeee;
+  color: #ffffff;
+  /* background: #eeeeee; */
+  background: #000000;
 }
 
 .main {
@@ -49,15 +51,15 @@ body {
   text-align: center;
   /* overflow: hidden; */
 
-  border: 1px solid #ffffff;
+  border: 1px solid #494949;
   height: 40vh;
   width: auto;
   /* float: left; */
 
-  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
-  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
+  /* -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
+  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69); */
   padding: 5px;
-  background-color: #eeeeee;
+  background: #000000;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
   grid-gap: 10px;
