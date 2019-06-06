@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactAnimatedWeather from "react-animated-weather";
 
 class Navbar extends Component {
   state = { time: "" };
@@ -20,7 +21,9 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar">
-        {/* <h1>Navbar</h1> */}
+        <div className="navWeather">
+          <ReactAnimatedWeather icon="SNOW" color="white" size="64" />
+        </div>
         <div className="clock">
           <h1>{this.state.time}</h1>
         </div>

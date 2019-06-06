@@ -8,6 +8,7 @@ import Navbar from "./Navbar";
 
 class App extends Component {
   state = {
+    weather: [],
     commandList: [],
     commandValue: "",
     commandKey: "",
@@ -17,12 +18,6 @@ class App extends Component {
   whatever = () => {};
 
   componentDidMount() {
-    // this.timer = setInterval(() => this.getItems(), 1000);
-    // fetch("https://api.tfl.gov.uk/Line/dlr/Status?detail=false")
-    //   .then(resp => resp.json())
-    //   .then(x => this.setState({ Status: x, loading: false }));
-    ///////////////////
-
     var cable = ActionCable.createConsumer("wss://9550cdca.eu.ngrok.io/cable");
 
     cable.subscriptions.create("UpdateChannel", {
@@ -35,12 +30,18 @@ class App extends Component {
         }
       }
     });
+    fetch(
+      "https://bypasscors.herokuapp.com/api/?url=https://api.darksky.net/forecast/4812400e8cc5b9678e6a02e9b16c64fa/51.482647,-0.015522"
+    )
+      .then(resp => resp.json())
+      .then(weather => this.setState({ weather }));
   }
 
   render() {
     return (
       <div className="main">
-        <Navbar />
+        {console.log(this.state.weather)}
+        <Navbar weather={this.state.weather} />
         <Router>
           <Switch>
             {this.state.on === "true" && (
@@ -52,6 +53,7 @@ class App extends Component {
                     {...props}
                     commandKey={this.state.commandKey}
                     commandValue={this.state.commandValue}
+                    weather={this.state.weather}
                   />
                 )}
               />

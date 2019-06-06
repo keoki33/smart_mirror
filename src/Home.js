@@ -15,7 +15,7 @@ class Home extends Component {
   render() {
     return (
       <div className="cards">
-        <Weather />
+        <Weather weather={this.props.weather} />
         <Tfl />
         <Youtube />
         <Google

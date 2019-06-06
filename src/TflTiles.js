@@ -16,10 +16,10 @@ class TflTiles extends Component {
             ? " ✅"
             : "❌"}
         </p>
-        {console.log(this.props.line)}
+        {/* {console.log(this.props.line)}
         {console.log(
           this.props.line["lineStatuses"][0]["statusSeverityDescription"]
-        )}
+        )} */}
       </div>
     );
   }
