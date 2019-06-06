@@ -1,60 +1,83 @@
 body {
   color: #ffffff;
+  padding: 0px;
+  margin: 0px;
   /* background: #eeeeee; */
   background: #000000;
+  max-height: 100vh;
+  max-width: 100vh;
+  overflow: hidden;
 }
 
 .main {
-  /* display: grid;
-  grid-template-columns: 50px 1fr;
-  grid-template-rows: repeat(10 1fr, minmax(100px, 1fr)); */
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  height: 100vh;
+  max-height: 100vh;
+  max-width: 100vh;
+  /* overflow: hidden; */
   /* grid-template-areas:
     "nav cards"
     "nav cards"; */
 }
 
 .navbar {
-  float: left;
-  position: relative;
+  display: grid;
+  grid-auto-rows: repeat(10 1fr);
+  font-family: Orbitron;
+  border: 1px solid #242424;
+
+  /* float: left;
+  position: relative; */
   /* grid-area: nav; */
   max-width: 100%;
   /* display: grid;
   grid-template-rows: repeat(10 1fr, minmax(100px, 1fr)); */
 
   /* overflow: hidden; */
-  writing-mode: vertical-rl;
-  text-orientation: sideways;
-  /* border-radius: 10px; */
-  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
-  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
-  height: 100vh;
+  /* writing-mode: vertical-rl;
+  text-orientation: sideways; */
+
+  /* height: 100vh; */
 }
 
 .clock {
+  grid-row: 10;
+  text-align: center;
 }
 
 .cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  align-items: stretch;
+
   /* grid-area: cards; */
-  width: 80%;
-  height: 100%;
+  width: 99%;
+
   margin: 0 auto;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 5px;
+  grid-gap: 5px; */
+  max-height: 100vh;
+  /* overflow: auto; */
 }
 
 .card {
   text-align: center;
 
   /* width: 50%; */
-  margin: 0 auto;
+
   text-align: center;
   /* overflow: hidden; */
 
   border: 1px solid #494949;
-  height: 40vh;
-  width: auto;
+  /* height: 40vh; */
+  /* width: 100%; */
   /* float: left; */
+  height: fit-content;
+  width: fit-content;
 
   /* -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
   box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69); */
@@ -67,11 +90,18 @@ body {
 }
 
 .card > iframe {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: max-content;
+  max-height: max-content;
+  /* height: fit-content;
+  width: fit-content; */
 }
 
 .quote {
-  width: 100px;
-  max-height: 40%;
+  /* width: 100px;
+  max-height: 40%; */
+}
+
+.tube {
+  text-align: left;
+  border: 1px solid #494949;
 }
