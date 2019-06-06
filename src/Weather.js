@@ -5,10 +5,13 @@ class Weather extends Component {
   state = {};
 
   showHourly = () => {
-    this.props.weather.length === 0 || this.props.weather === undefined
-      ? console.log("empty")
-      : console.log(this.props.weather.currently.icon);
-    // return this.props.weather["hourly"].map(x => <WeatherTiles weather={x} />);
+    if (this.props.weather.length === 0 || this.props.weather === undefined) {
+      console.log("");
+    } else {
+      return this.props.weather.hourly.data.map(x => (
+        <WeatherTiles key={x.time} weather={x} />
+      ));
+    }
   };
 
   render() {

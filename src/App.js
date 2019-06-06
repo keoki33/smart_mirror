@@ -31,7 +31,7 @@ class App extends Component {
       }
     });
     fetch(
-      "https://bypasscors.herokuapp.com/api/?url=https://api.darksky.net/forecast/4812400e8cc5b9678e6a02e9b16c64fa/51.482647,-0.015522"
+      "https://bypasscors.herokuapp.com/api/?url=https://api.darksky.net/forecast/4812400e8cc5b9678e6a02e9b16c64fa/51.482647,-0.015522?units=uk2"
     )
       .then(resp => resp.json())
       .then(weather => this.setState({ weather }));

@@ -16,7 +16,7 @@ class Tfl extends Component {
 
   displayStatus = () => {
     // console.log(this.state.lines);
-    return this.state.lines.map(x => <TflTiles line={x} />);
+    return this.state.lines.map(x => <TflTiles key={x.name} line={x} />);
   };
 
   // componentWillUnmount() {

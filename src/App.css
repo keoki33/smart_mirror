@@ -110,4 +110,5 @@ body {
 .navWeather {
   grid-row: 2;
   margin-left: 20px;
+  white-space: pre-line;
 }

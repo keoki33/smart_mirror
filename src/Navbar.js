@@ -18,12 +18,34 @@ class Navbar extends Component {
     this.setState({ time: `${h + ":" + m + ":" + s}` });
   };
 
+  showIcon = () => {
+    return this.props.weather.length === 0 || this.props.weather === undefined
+      ? "FOG"
+      : this.props.weather.currently.icon.toUpperCase().replace(/-/g, "_");
+  };
+
+  displayWeather = () => {
+    return `${this.props.weather.currently.temperature.toFixed(1)} C \n
+      ${this.props.weather.currently.summary} \n
+     
+      Wind: ${this.props.weather.currently.windSpeed} mph \n
+      Chance of Rain: \n
+       ${this.props.weather.currently.windSpeed}%
+      `;
+  };
+
   render() {
     return (
       <div className="navbar">
         <div className="navWeather">
-          <ReactAnimatedWeather icon="SNOW" color="white" size={64} />
-          {/* {this.props.weather.currently.summary} */}
+          <ReactAnimatedWeather
+            icon={this.showIcon()}
+            color="white"
+            size={80}
+          />
+          <br />
+          <br />
+          {this.props.weather.length !== 0 && this.displayWeather()}
         </div>
         <div className="clock">
           <h1>{this.state.time}</h1>

@@ -11,20 +11,24 @@ const defaults = {
 class WeatherTiles extends Component {
   state = {};
 
-  displayIcon = () => {
-    return "WIND";
+  showIcon = () => {
+    return this.props.weather.icon.toUpperCase().replace(/-/g, "_");
+  };
+
+  showTime = () => {
+    var dt = new Date(this.props.weather.time * 1000);
+    var hr = dt.getHours();
+    var m = "0" + dt.getMinutes();
+    var s = "0" + dt.getSeconds();
+    return hr + ":" + m.substr(-2);
   };
 
   render() {
     return (
       <div className="card">
-        {console.log()}
-        <ReactAnimatedWeather
-          icon={this.displayIcon()}
-          color="white"
-          size={64}
-        />
-        {this.props.weather.icon}
+        <ReactAnimatedWeather icon={this.showIcon()} color="white" size={20} />
+        {this.showTime()} {this.props.weather.summary}{" "}
+        {this.props.weather.temperature.toFixed(1)} {"C"}
       </div>
     );
   }
