@@ -22,7 +22,8 @@ class Navbar extends Component {
     return (
       <div className="navbar">
         <div className="navWeather">
-          <ReactAnimatedWeather icon="SNOW" color="white" size="64" />
+          <ReactAnimatedWeather icon="SNOW" color="white" size={64} />
+          {/* {this.props.weather.currently.summary} */}
         </div>
         <div className="clock">
           <h1>{this.state.time}</h1>

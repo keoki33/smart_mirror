@@ -1,31 +1,21 @@
 import React, { Component } from "react";
-import ReactAnimatedWeather from "react-animated-weather";
-
-const defaults = {
-  icon: "WIND",
-  color: "white",
-  size: 64,
-  animate: true
-};
+import WeatherTiles from "./WeatherTiles";
 
 class Weather extends Component {
   state = {};
 
-  test = () => {
-    return [1, 2, 3, 4, 5].map(x => x);
+  showHourly = () => {
+    this.props.weather.length === 0 || this.props.weather === undefined
+      ? console.log("empty")
+      : console.log(this.props.weather.currently.icon);
+    // return this.props.weather["hourly"].map(x => <WeatherTiles weather={x} />);
   };
 
   render() {
     return (
       <div className="card">
         {console.log()}
-        <ReactAnimatedWeather
-          icon={defaults.icon}
-          color={defaults.color}
-          size={64}
-          animate={defaults.animate}
-        />
-        {this.test()}
+        {this.showHourly()}
       </div>
     );
   }
