@@ -44,6 +44,9 @@ body {
 .clock {
   grid-row: 10;
   text-align: center;
+  font-size: 3vh;
+  white-space: pre-line;
+  line-height: 4.5vh;
 }
 
 .cards {

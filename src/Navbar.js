@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactAnimatedWeather from "react-animated-weather";
+import Clock from "react-live-clock";
 
 class Navbar extends Component {
   state = { time: "" };
@@ -7,16 +8,16 @@ class Navbar extends Component {
   whatever = () => {};
 
   componentDidMount() {
-    this.timer = setInterval(() => this.showTime(), 1000);
+    // this.timer = setInterval(() => this.showTime(), 1000);
   }
 
-  showTime = () => {
-    let date = new Date();
-    let h = date.getHours();
-    let m = date.getMinutes();
-    let s = date.getSeconds();
-    this.setState({ time: `${h + ":" + m + ":" + s}` });
-  };
+  // showTime = () => {
+  //   let date = new Date();
+  //   let h = date.getHours();
+  //   let m = date.getMinutes();
+  //   let s = date.getSeconds();
+  //   this.setState({ time: `${h + ":" + m + ":" + s}` });
+  // };
 
   showIcon = () => {
     return this.props.weather.length === 0 || this.props.weather === undefined
@@ -48,7 +49,13 @@ class Navbar extends Component {
           {this.props.weather.length !== 0 && this.displayWeather()}
         </div>
         <div className="clock">
-          <h1>{this.state.time}</h1>
+          <Clock className="clock" format={"dddd "} />
+          <br />
+          <Clock
+            ticking="true"
+            className="clock"
+            format={"MMMM Mo h:mm:ss A"}
+          />
         </div>
       </div>
     );
