@@ -12,13 +12,14 @@ class App extends Component {
     commandList: [],
     commandValue: "",
     commandKey: "",
-    on: "true"
+    on: "true",
+    video: "pause"
   };
 
   whatever = () => {};
 
   componentDidMount() {
-    var cable = ActionCable.createConsumer("wss://9550cdca.eu.ngrok.io/cable");
+    var cable = ActionCable.createConsumer("wss://d1e9d14c.eu.ngrok.io/cable");
 
     cable.subscriptions.create("UpdateChannel", {
       received: data => {
@@ -27,6 +28,11 @@ class App extends Component {
         switch (data.key) {
           case "on":
             this.setState({ on: data.value });
+            break;
+          case "youtube":
+            this.setState({ video: data.value });
+            break;
+          default:
         }
       }
     });
@@ -39,7 +45,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="main">
+      <div className="main" id="main">
         {console.log(this.state.weather)}
         <Navbar weather={this.state.weather} />
         <Router>
@@ -54,6 +60,7 @@ class App extends Component {
                     commandKey={this.state.commandKey}
                     commandValue={this.state.commandValue}
                     weather={this.state.weather}
+                    video={this.state.video}
                   />
                 )}
               />

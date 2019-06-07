@@ -1,3 +1,5 @@
+/* MAIN BODY */ /* MAIN BODY */ /* MAIN BODY */ /* MAIN BODY */ /* MAIN BODY */ /* MAIN BODY */ /* MAIN BODY */ /* MAIN BODY */ /* MAIN BODY */ /* MAIN BODY */
+
 body {
   color: #ffffff;
   padding: 0px;
@@ -6,7 +8,10 @@ body {
   background: #000000;
   max-height: 100vh;
   max-width: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+#main {
 }
 
 .main {
@@ -20,6 +25,8 @@ body {
     "nav cards"
     "nav cards"; */
 }
+
+/* NAVIGATION BAR */ /* NAVIGATION BAR */ /* NAVIGATION BAR */ /* NAVIGATION BAR */ /* NAVIGATION BAR */ /* NAVIGATION BAR */ /* NAVIGATION BAR */
 
 .navbar {
   display: grid;
@@ -48,6 +55,14 @@ body {
   white-space: pre-line;
   line-height: 4.5vh;
 }
+
+.navWeather {
+  grid-row: 2;
+  margin-left: 20px;
+  white-space: pre-line;
+}
+
+/* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */
 
 .cards {
   display: flex;
@@ -93,13 +108,6 @@ body {
   /* border-radius: 10px; */
 }
 
-.card > iframe {
-  max-width: max-content;
-  max-height: max-content;
-  /* height: fit-content;
-  width: fit-content; */
-}
-
 .quote {
   /* width: 100px;
   max-height: 40%; */
@@ -110,8 +118,17 @@ body {
   border: 1px solid #494949;
 }
 
-.navWeather {
-  grid-row: 2;
-  margin-left: 20px;
-  white-space: pre-line;
+.material-icons.check {
+  color: #00ff55;
+}
+
+.material-icons.error {
+  color: #e5ff00;
+}
+
+.material-icons.warning {
+  color: #ff0000;
+}
+
+.video {
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Tfl from "./Tfl";
 import Google from "./Google";
-import Youtube from "./Youtube";
+import Video from "./Video";
 import Weather from "./Weather";
 import Calendar from "./Calendar";
 import Quote from "./Quote";
@@ -17,7 +17,7 @@ class Home extends Component {
       <div className="cards">
         <Weather weather={this.props.weather} />
         <Tfl />
-        <Youtube />
+        <Video video={this.props.video} />
         <Google
           commandKey={this.props.commandKey}
           commandValue={this.props.commandValue}
