@@ -25,9 +25,9 @@ class WeatherTiles extends Component {
 
   render() {
     return (
-      <div className="card">
-        <ReactAnimatedWeather icon={this.showIcon()} color="white" size={20} />
-        {this.showTime()} {this.props.weather.summary}{" "}
+      <div className="">
+        <ReactAnimatedWeather icon={this.showIcon()} color="white" size={20} />{" "}
+        {this.showTime()} {this.props.weather.summary}:{" "}
         {this.props.weather.temperature.toFixed(1)} {"C"}
       </div>
     );

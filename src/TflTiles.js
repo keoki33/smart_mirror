@@ -18,12 +18,16 @@ class TflTiles extends Component {
 
   render() {
     return (
-      <div className="tube">
-        <p>
-          {this.props.line.name}{" "}
-          {this.props.line["lineStatuses"][0]["statusSeverityDescription"]}{" "}
-          {this.showIcon()}
-        </p>
+      <div className="">
+        <img
+          src={require(`./images/${this.props.line.name}.png`)}
+          alt=""
+          width="15"
+          height="15"
+        />{" "}
+        {this.props.line.name}:{" "}
+        {this.props.line["lineStatuses"][0]["statusSeverityDescription"]}{" "}
+        {this.showIcon()}
         {/* {console.log(this.props.line)}
         {console.log(
           this.props.line["lineStatuses"][0]["statusSeverityDescription"]

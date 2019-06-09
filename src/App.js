@@ -8,18 +8,22 @@ import Navbar from "./Navbar";
 
 class App extends Component {
   state = {
+    url:
+      "https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1",
     weather: [],
     commandList: [],
     commandValue: "",
     commandKey: "",
     on: "true",
-    video: "pause"
+    playing: false,
+    muted: false,
+    volume: 1
   };
 
   whatever = () => {};
 
   componentDidMount() {
-    var cable = ActionCable.createConsumer("wss://d1e9d14c.eu.ngrok.io/cable");
+    var cable = ActionCable.createConsumer("wss://97877b9a.eu.ngrok.io/cable");
 
     cable.subscriptions.create("UpdateChannel", {
       received: data => {
@@ -30,7 +34,12 @@ class App extends Component {
             this.setState({ on: data.value });
             break;
           case "youtube":
-            this.setState({ video: data.value });
+            data.value === "true"
+              ? this.setState({ playing: true })
+              : this.setState({ playing: false, muted: true });
+            break;
+          case "volume":
+            this.setState({ muted: false, volume: 1 });
             break;
           default:
         }
@@ -57,10 +66,13 @@ class App extends Component {
                 render={props => (
                   <Home
                     {...props}
+                    url={this.state.url}
                     commandKey={this.state.commandKey}
                     commandValue={this.state.commandValue}
                     weather={this.state.weather}
-                    video={this.state.video}
+                    playing={this.state.playing}
+                    muted={this.state.muted}
+                    volume={this.state.volume}
                   />
                 )}
               />

@@ -5,6 +5,7 @@ import Video from "./Video";
 import Weather from "./Weather";
 import Calendar from "./Calendar";
 import Quote from "./Quote";
+
 // import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class Home extends Component {
@@ -17,7 +18,12 @@ class Home extends Component {
       <div className="cards">
         <Weather weather={this.props.weather} />
         <Tfl />
-        <Video video={this.props.video} />
+        <Video
+          url={this.props.url}
+          playing={this.props.playing}
+          muted={this.props.muted}
+          volume={this.props.volume}
+        />
         <Google
           commandKey={this.props.commandKey}
           commandValue={this.props.commandValue}

@@ -1,39 +1,37 @@
 import React, { Component } from "react";
-import { Player } from "video-react";
+import ReactPlayer from "react-player";
 
 class Video extends Component {
-  state = { player: this.props.video };
+  state = { muted: false };
 
-  componentDidUpdate = prevProps => {
-    if (prevProps.video !== this.props.video) {
-      switch (this.props.video) {
-        case "play":
-          console.log("play");
-          return this.refs.player.play();
-        case "pause":
-          console.log("pause");
-          return this.refs.player.pause();
-        default:
-      }
-    }
+  unMute = () => {
+    this.setState({ muted: false });
   };
 
   render() {
     return (
       <div className="card">
         {console.log("")}
-
-        <Player
-          ControlBar
-          autoHide={false}
-          fluid="false"
-          videowidth="320"
-          videoheight="240"
-          className="video"
-          ref="player"
-          playsInline
-          poster="/assets/poster.png"
-          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+        {console.log("")}
+        {/* <iframe
+          id="player"
+          type="text/html"
+          width="640"
+          height="390"
+          src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+          frameborder="0"
+        /> */}
+        <ReactPlayer
+          width="100%"
+          height="100%"
+          // youtubeConfig={{
+          //   playerVars: { enablejsapi: 1, autoplay: 1, playsinline: 0 }
+          // }}
+          url={this.props.url}
+          playing={this.props.playing}
+          // muted={this.props.muted}
+          volume={this.props.volume}
+          onPlay={this.unMute}
         />
       </div>
     );

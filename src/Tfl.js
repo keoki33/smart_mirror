@@ -9,7 +9,9 @@ class Tfl extends Component {
   };
 
   componentDidMount() {
-    fetch("https://api.tfl.gov.uk/Line/Mode/tube%2C%20dlr/Status")
+    fetch(
+      "https://api.tfl.gov.uk/Line/Mode/tube%2Cdlr%2Coverground/Status?detail=false"
+    )
       .then(resp => resp.json())
       .then(lines => this.setState({ lines }));
   }
@@ -40,7 +42,7 @@ class Tfl extends Component {
 
   render() {
     return (
-      <div className="card">
+      <div className="tube">
         {/* console.log("test") */}
         {this.displayStatus()}
       </div>

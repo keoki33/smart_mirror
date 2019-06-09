@@ -109,25 +109,40 @@ body {
 }
 
 .quote {
-  /* width: 100px;
-  max-height: 40%; */
+  position: absolute;
+  bottom: 10px;
+  margin-left: 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 2.5vh;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weather {
+  width: fit-content;
+  border: 1px solid #242424;
 }
 
 .tube {
-  text-align: left;
-  border: 1px solid #494949;
+  font-size: 15px;
+  text-align: justify;
+  width: fit-content;
+  border: 1px solid #242424;
 }
 
 .material-icons.check {
   color: #00ff55;
+  font-size: 15px;
 }
 
 .material-icons.error {
   color: #e5ff00;
+  font-size: 15px;
 }
 
 .material-icons.warning {
   color: #ff0000;
+  font-size: 15px;
 }
 
 .video {

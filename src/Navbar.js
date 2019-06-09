@@ -48,6 +48,7 @@ class Navbar extends Component {
           <br />
           {this.props.weather.length !== 0 && this.displayWeather()}
         </div>
+
         <div className="clock">
           <Clock className="clock" format={"dddd "} />
           <br />
