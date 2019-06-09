@@ -39,8 +39,8 @@ class App extends Component {
             break;
           case "youtube":
             data.value === "true"
-              ? this.setState({ playing: true })
-              : this.setState({ playing: false, muted: true });
+              ? this.setState({ playing: true, volume: 1 })
+              : this.setState({ playing: false });
             break;
           case "volume":
             this.setState({ muted: false, volume: 1 });

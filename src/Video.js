@@ -31,7 +31,7 @@ class Video extends Component {
           playing={this.props.playing}
           muted={this.props.muted}
           volume={this.props.volume}
-          onPlay={this.unMute}
+          // onPlay={this.unMute}
         />
       </div>
     );
