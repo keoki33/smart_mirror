@@ -28,7 +28,11 @@ class App extends Component {
     cable.subscriptions.create("UpdateChannel", {
       received: data => {
         // console.log("update_channel received data", data.key);
-        this.setState({ commandKey: data.key, commandValue: data.value });
+        this.setState({
+          commandList: data,
+          commandKey: data.key,
+          commandValue: data.value
+        });
         switch (data.key) {
           case "on":
             this.setState({ on: data.value });
@@ -67,6 +71,7 @@ class App extends Component {
                   <Home
                     {...props}
                     url={this.state.url}
+                    commandList={this.state.commandList}
                     commandKey={this.state.commandKey}
                     commandValue={this.state.commandValue}
                     weather={this.state.weather}

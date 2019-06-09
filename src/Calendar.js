@@ -7,7 +7,7 @@ class Calendar extends Component {
 
   render() {
     return (
-      <div className="card">
+      <div className="calendar">
         Calendar
         <iframe
           src="https://calendar.google.com/calendar/embed?src=en.uk%23holiday%40group.v.calendar.google.com&ctz=Europe%2FLondon"

@@ -10,7 +10,7 @@ class Video extends Component {
 
   render() {
     return (
-      <div className="card">
+      <div className="video">
         {console.log("")}
         {console.log("")}
         {/* <iframe
@@ -29,7 +29,7 @@ class Video extends Component {
           // }}
           url={this.props.url}
           playing={this.props.playing}
-          // muted={this.props.muted}
+          muted={this.props.muted}
           volume={this.props.volume}
           onPlay={this.unMute}
         />

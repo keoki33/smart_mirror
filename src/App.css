@@ -20,6 +20,7 @@ body {
   height: 100vh;
   max-height: 100vh;
   max-width: 100vh;
+  width: 100vh;
   /* overflow: hidden; */
   /* grid-template-areas:
     "nav cards"
@@ -116,11 +117,14 @@ body {
   font-size: 2.5vh;
   font-weight: bold;
   text-align: center;
+  border: 1px solid #242424;
+  width: 83%;
 }
 
 .weather {
   width: fit-content;
   border: 1px solid #242424;
+  padding: 5px;
 }
 
 .tube {
@@ -128,6 +132,7 @@ body {
   text-align: justify;
   width: fit-content;
   border: 1px solid #242424;
+  padding: 5px;
 }
 
 .material-icons.check {
@@ -146,4 +151,19 @@ body {
 }
 
 .video {
+  border: 1px solid #494949;
+}
+
+.google {
+  border: 1px solid #494949;
+  width: fit-content;
+  height: fit-content;
+}
+
+.calendar {
+  width: fit-content;
+  height: 50vh;
+  overflow: auto;
+  border: 1px solid #242424;
+  padding: 5px;
 }
