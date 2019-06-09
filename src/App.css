@@ -34,7 +34,8 @@ body {
   grid-auto-rows: repeat(10 1fr);
   font-family: Orbitron;
   border: 1px solid #242424;
-
+  font-weight: bold;
+  letter-spacing: 2px;
   /* float: left;
   position: relative; */
   /* grid-area: nav; */
@@ -52,6 +53,7 @@ body {
 .clock {
   grid-row: 10;
   text-align: center;
+
   font-size: 3vh;
   white-space: pre-line;
   line-height: 4.5vh;
@@ -152,6 +154,14 @@ body {
 
 .video {
   border: 1px solid #494949;
+}
+
+.videoFull {
+  position: absolute;
+  border: 1px solid #494949;
+  width: 83%;
+  height: 100%;
+  z-index: 5;
 }
 
 .google {

@@ -26,10 +26,14 @@ class Navbar extends Component {
   };
 
   displayWeather = () => {
-    return `${this.props.weather.currently.temperature.toFixed(1)} C \n
-      ${this.props.weather.currently.summary} \n
+    return `
+    ${this.props.weather.currently.summary} \n\n
+    Current: ${this.props.weather.currently.temperature.toFixed(1)} C \n
+    Low: ${this.props.weather.daily.data[0].temperatureLow.toFixed(1)} C \n
+    High: ${this.props.weather.daily.data[0].temperatureHigh.toFixed(1)} C \n\
+      
      
-      Wind: ${this.props.weather.currently.windSpeed} mph \n
+      Wind: ${this.props.weather.currently.windSpeed} mph \n\n
       Chance of Rain: \n
        ${this.props.weather.currently.windSpeed}%
       `;
@@ -53,7 +57,7 @@ class Navbar extends Component {
           <Clock className="clock" format={"dddd "} />
           <br />
           <Clock
-            ticking="true"
+            ticking={true}
             className="clock"
             format={"MMMM Mo h:mm:ss A"}
           />

@@ -17,7 +17,8 @@ class App extends Component {
     on: "true",
     playing: false,
     muted: false,
-    volume: 1
+    volume: 1,
+    videoClass: "video"
   };
 
   whatever = () => {};
@@ -43,6 +44,9 @@ class App extends Component {
             data.value === "true"
               ? this.setState({ playing: true, volume: 1 })
               : this.setState({ playing: false });
+            break;
+          case "youtubeSize":
+            this.setState({ videoClass: data.value });
             break;
           case "volume":
             this.setState({ muted: false, volume: 1 });
@@ -72,6 +76,7 @@ class App extends Component {
                 render={props => (
                   <Home
                     {...props}
+                    videoClass={this.state.videoClass}
                     url={this.state.url}
                     commandList={this.state.commandList}
                     commandKey={this.state.commandKey}

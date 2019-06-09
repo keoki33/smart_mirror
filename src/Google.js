@@ -8,10 +8,12 @@ class Google extends Component {
   render() {
     return (
       <div className="google">
-        <h1>Google Voice command:</h1>
+        Google Voice command:
         {JSON.stringify(this.props.commandList.queryResult)}
-        <h3>Command Key: {this.props.commandKey}</h3>
-        <h3>Command Value: {this.props.commandValue}</h3>
+        <br />
+        Command Key: {this.props.commandKey}
+        <br />
+        Command Value: {this.props.commandValue}
       </div>
     );
   }

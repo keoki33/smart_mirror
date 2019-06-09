@@ -10,9 +10,7 @@ class Video extends Component {
 
   render() {
     return (
-      <div className="video">
-        {console.log("")}
-        {console.log("")}
+      <div className={this.props.videoClass}>
         {/* <iframe
           id="player"
           type="text/html"
