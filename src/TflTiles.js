@@ -8,17 +8,17 @@ class TflTiles extends Component {
   showIcon = () => {
     switch (this.props.line["lineStatuses"][0]["statusSeverityDescription"]) {
       case "Good Service":
-        return <i class="material-icons check">check_circle</i>;
+        return <i className="material-icons check">check_circle</i>;
       case "Minor Delays":
-        return <i class="material-icons error">error</i>;
+        return <i className="material-icons error">error</i>;
       default:
-        return <i class="material-icons warning">warning</i>;
+        return <i className="material-icons warning">warning</i>;
     }
   };
 
   render() {
     return (
-      <div className="">
+      <div>
         <img
           src={require(`./images/${this.props.line.name}.png`)}
           alt=""

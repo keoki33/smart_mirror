@@ -8,6 +8,7 @@ body {
   background: #000000;
   max-height: 100vh;
   max-width: 100vh;
+  font-weight: bold;
   /* overflow: hidden; */
 }
 
@@ -172,8 +173,20 @@ body {
 
 .calendar {
   width: fit-content;
-  height: 50vh;
+  height: 30vh;
   overflow: auto;
   border: 1px solid #242424;
   padding: 5px;
+}
+
+.news {
+  border: 1px solid #494949;
+  width: 336px;
+  height: fit-content;
+}
+
+.command {
+  border: 1px solid #494949;
+  width: fit-content;
+  height: fit-content;
 }

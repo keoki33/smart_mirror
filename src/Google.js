@@ -9,7 +9,7 @@ class Google extends Component {
     return (
       <div className="google">
         Google Voice command:
-        {JSON.stringify(this.props.commandList.queryResult)}
+        {/* {JSON.stringify(this.props.commandList.queryResult)} */}
         <br />
         Command Key: {this.props.commandKey}
         <br />

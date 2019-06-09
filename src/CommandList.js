@@ -7,7 +7,7 @@ class CommandList extends Component {
 
   render() {
     return (
-      <div className="">
+      <div className="command">
         Command List:
         <ul>
           <li>Good Morning, Wake Up - Turn main on. key: on, value: true</li>

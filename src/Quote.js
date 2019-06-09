@@ -30,7 +30,7 @@ class Quote extends Component {
   render() {
     return (
       <div className="quote">
-        Mani's Thought for the day: <br />
+        Mani's thought for the day: <br />
         {this.displayQuote()}
       </div>
     );

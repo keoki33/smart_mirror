@@ -6,6 +6,7 @@ import Weather from "./Weather";
 import Calendar from "./Calendar";
 import Quote from "./Quote";
 import CommandList from "./CommandList";
+import News from "./News";
 
 // import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
@@ -34,6 +35,7 @@ class Home extends Component {
         <Calendar />
         <Quote />
         <CommandList />
+        <News />
       </div>
     );
   }

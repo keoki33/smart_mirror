@@ -13,7 +13,6 @@ class Calendar extends Component {
           src="https://calendar.google.com/calendar/embed?src=en.uk%23holiday%40group.v.calendar.google.com&ctz=Europe%2FLondon"
           //   width="800"
           height="800"
-          frameborder="0"
           scrolling="no"
         />
       </div>
