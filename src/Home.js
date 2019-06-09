@@ -25,6 +25,7 @@ class Home extends Component {
           volume={this.props.volume}
         />
         <Google
+          commandList={this.props.commandList}
           commandKey={this.props.commandKey}
           commandValue={this.props.commandValue}
         />

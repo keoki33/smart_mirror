@@ -23,13 +23,15 @@ class App extends Component {
   whatever = () => {};
 
   componentDidMount() {
-    var cable = ActionCable.createConsumer("wss://97877b9a.eu.ngrok.io/cable");
+    var cable = ActionCable.createConsumer(
+      "wss://boiling-tundra-71042.herokuapp.com/cable"
+    );
 
     cable.subscriptions.create("UpdateChannel", {
       received: data => {
         // console.log("update_channel received data", data.key);
         this.setState({
-          commandList: data,
+          commandList: data.command,
           commandKey: data.key,
           commandValue: data.value
         });
