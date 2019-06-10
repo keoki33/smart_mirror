@@ -84,11 +84,6 @@ body {
   grid-gap: 5px; */
   max-height: 100vh;
   /* overflow: auto; */
-  animation: fadeIn ease 4s;
-  -webkit-animation: fadeIn ease 4s;
-  -moz-animation: fadeIn ease 4s;
-  -o-animation: fadeIn ease 4s;
-  -ms-animation: fadeIn ease 4s;
 }
 
 .card {
@@ -133,6 +128,12 @@ body {
   width: fit-content;
   border: 1px solid #242424;
   padding: 5px;
+
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
 
 .tube {
@@ -141,6 +142,12 @@ body {
   width: fit-content;
   border: 1px solid #242424;
   padding: 5px;
+
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
 
 .material-icons.check {
@@ -160,6 +167,12 @@ body {
 
 .video {
   border: 1px solid #494949;
+
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
 
 .videoFull {
@@ -170,17 +183,23 @@ body {
   height: 100%;
   z-index: 5;
 
-  animation: fadeIn ease 4s;
-  -webkit-animation: fadeIn ease 4s;
-  -moz-animation: fadeIn ease 4s;
-  -o-animation: fadeIn ease 4s;
-  -ms-animation: fadeIn ease 4s;
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
 
 .google {
   border: 1px solid #494949;
   width: fit-content;
   height: fit-content;
+
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
 
 .calendar {
@@ -189,18 +208,36 @@ body {
   overflow: auto;
   border: 1px solid #242424;
   padding: 5px;
+
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
 
 .news {
   border: 1px solid #494949;
   width: 336px;
   height: fit-content;
+
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
 
 .command {
   border: 1px solid #494949;
   width: fit-content;
   height: fit-content;
+
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
 
 .WeatherCards {
@@ -216,6 +253,8 @@ body {
 }
 
 .weatherDetail {
+  /* left: 15%; */
+  /* left: 100%; */
   top: 5%;
   position: absolute;
 
@@ -231,6 +270,9 @@ body {
 
   margin: 0 auto;
   /* z-index: 3; */
+
+  -webkit-animation: slide-in 2s forwards;
+  animation: slide-in 2s forwards;
 }
 
 /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */
@@ -277,5 +319,23 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-in {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 15%;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 15%;
   }
 }

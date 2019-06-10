@@ -35,7 +35,7 @@ class Home extends Component {
           commandValue={this.props.commandValue}
         />
         <Calendar />
-        <Quote />
+
         <CommandList />
         <News />
       </div>

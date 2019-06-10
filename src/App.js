@@ -5,6 +5,7 @@ import ActionCable from "actioncable";
 
 import Home from "./Home";
 import Navbar from "./Navbar";
+import Quote from "./Quote";
 
 class App extends Component {
   state = {
@@ -91,6 +92,7 @@ class App extends Component {
             )}
           </Switch>
         </Router>
+        <Quote />
       </div>
     );
   }
