@@ -54,12 +54,18 @@ class Navbar extends Component {
         </div>
 
         <div className="clock">
-          <Clock className="clock" format={"dddd "} />
+          <Clock
+            className="clock"
+            timezone={"Europe/London"}
+            format={"dddd"}
+            date={""}
+          />
           <br />
           <Clock
             ticking={true}
             className="clock"
-            format={"MMMM Mo h:mm:ss A"}
+            format={"MMMM Do hh:mm:ss A"}
+            timezone={"Europe/London"}
           />
         </div>
       </div>

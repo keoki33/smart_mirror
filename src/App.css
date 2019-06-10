@@ -203,10 +203,37 @@ body {
   height: fit-content;
 }
 
-/* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */
+.WeatherCards {
+  margin: 10px;
+  color: black;
+  float: left;
+  border: 1px solid #494949;
+  width: 20%;
 
-.fade-in {
+  height: 35vh;
+  background-color: #ffffff;
+  padding: 10px;
 }
+
+.weatherDetail {
+  top: 5%;
+  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* align-items: flex-end; */
+  /* align-items: stretch; */
+  justify-content: center;
+
+  /* grid-area: cards; */
+  width: 83%;
+
+  margin: 0 auto;
+  /* z-index: 3; */
+}
+
+/* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */
 
 @keyframes fadeIn {
   0% {

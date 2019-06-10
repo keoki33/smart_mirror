@@ -7,6 +7,7 @@ import Calendar from "./Calendar";
 import Quote from "./Quote";
 import CommandList from "./CommandList";
 import News from "./News";
+import WeatherDetail from "./WeatherDetail";
 
 // import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
@@ -19,6 +20,7 @@ class Home extends Component {
     return (
       <div className="cards">
         <Weather weather={this.props.weather} />
+        <WeatherDetail weather={this.props.weather} />
         <Tfl />
         <Video
           videoClass={this.props.videoClass}

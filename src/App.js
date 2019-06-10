@@ -65,7 +65,7 @@ class App extends Component {
   render() {
     return (
       <div className="main" id="main">
-        {console.log(this.state.weather)}
+        {/* {console.log(this.state.weather)} */}
         <Navbar weather={this.state.weather} />
         <Router>
           <Switch>

@@ -17,7 +17,7 @@ class WeatherTiles extends Component {
 
   showTime = () => {
     var dt = new Date(this.props.weather.time * 1000);
-    var hr = dt.getHours();
+    var hr = dt.getHours() + 1;
     var m = "0" + dt.getMinutes();
     var s = "0" + dt.getSeconds();
     return hr + ":" + m.substr(-2);
