@@ -18,7 +18,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="cards">
+      <div className={this.props.cardsClass}>
         {this.props.weatherTiles === "true" && (
           <Weather weather={this.props.weather} />
         )}

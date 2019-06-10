@@ -17,7 +17,7 @@ class App extends Component {
     commandKey: "",
     on: "true",
     playing: false,
-    muted: false,
+    muted: true,
     volume: 1,
     videoClass: "video",
     forecast: false,
@@ -26,7 +26,8 @@ class App extends Component {
     google: "true",
     calendar: "true",
     commands: "true",
-    news: "true"
+    news: "true",
+    cardsClass: "cards"
   };
 
   whatever = () => {};
@@ -56,6 +57,7 @@ class App extends Component {
           case "youtubeSize":
             if (data.value === "video")
               this.setState({
+                cardsClass: "cards",
                 videoClass: data.value,
                 weatherTiles: "true",
                 tfl: "true",
@@ -66,6 +68,7 @@ class App extends Component {
               });
             else {
               this.setState({
+                cardsClass: "",
                 videoClass: data.value,
                 weatherTiles: "false",
                 tfl: "false",
@@ -95,7 +98,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="main" id="main">
+      <div className="main">
         {/* {console.log(this.state.weather)} */}
         <Navbar weather={this.state.weather} />
         <Router>
@@ -123,6 +126,7 @@ class App extends Component {
                     calendar={this.state.calendar}
                     commands={this.state.commands}
                     news={this.state.news}
+                    cardsClass={this.state.cardsClass}
                   />
                 )}
               />

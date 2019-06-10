@@ -9,7 +9,7 @@ body {
   max-height: 100vh;
   max-width: 100vh;
   font-weight: bold;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 #main {
@@ -167,7 +167,6 @@ body {
 
 .video {
   border: 1px solid #494949;
-  max-width: 60%;
 
   animation: fadeIn ease 3s;
   -webkit-animation: fadeIn ease 3s;
@@ -177,11 +176,12 @@ body {
 }
 
 .videoFull {
-  position: absolute;
+  position: fixed;
   border: 1px solid #494949;
-  width: 110vh;
-  left: 15.5%;
-  height: 100vh;
+  width: 84%;
+  top: 0%;
+  left: 15.1%;
+  height: 89%;
   z-index: 5;
 
   animation: fadeIn ease 3s;
