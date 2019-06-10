@@ -20,7 +20,13 @@ class App extends Component {
     muted: false,
     volume: 1,
     videoClass: "video",
-    forecast: false
+    forecast: false,
+    weatherTiles: "true",
+    tfl: "true",
+    google: "true",
+    calendar: "true",
+    commandList: "true",
+    news: "true"
   };
 
   whatever = () => {};
@@ -48,7 +54,27 @@ class App extends Component {
               : this.setState({ playing: false });
             break;
           case "youtubeSize":
-            this.setState({ videoClass: data.value });
+            if (data.value === "video")
+              this.setState({
+                videoClass: data.value,
+                weatherTiles: "true",
+                tfl: "true",
+                google: "true",
+                calendar: "true",
+                commandList: "true",
+                news: "true"
+              });
+            else {
+              this.setState({
+                videoClass: data.value,
+                weatherTiles: "false",
+                tfl: "false",
+                google: "false",
+                calendar: "false",
+                commandList: "false",
+                news: "false"
+              });
+            }
             break;
           case "volume":
             this.setState({ muted: false, volume: 1 });
@@ -91,6 +117,12 @@ class App extends Component {
                     playing={this.state.playing}
                     muted={this.state.muted}
                     volume={this.state.volume}
+                    weatherTiles={this.state.weatherTiles}
+                    tfl={this.state.tfl}
+                    google={this.state.google}
+                    calendar={this.state.calendar}
+                    commandList={this.state.commandList}
+                    news={this.state.news}
                   />
                 )}
               />

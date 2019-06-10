@@ -19,11 +19,13 @@ class Home extends Component {
   render() {
     return (
       <div className="cards">
-        <Weather weather={this.props.weather} />
+        {this.props.weatherTiles === "true" && (
+          <Weather weather={this.props.weather} />
+        )}
         {this.props.forecast === "true" && (
           <WeatherDetail weather={this.props.weather} />
         )}
-        <Tfl />
+        {this.props.tfl === "true" && <Tfl />}
         <Video
           videoClass={this.props.videoClass}
           url={this.props.url}
@@ -31,15 +33,17 @@ class Home extends Component {
           muted={this.props.muted}
           volume={this.props.volume}
         />
-        <Google
-          commandList={this.props.commandList}
-          commandKey={this.props.commandKey}
-          commandValue={this.props.commandValue}
-        />
-        <Calendar />
+        {this.props.google === "true" && (
+          <Google
+            commandList={this.props.commandList}
+            commandKey={this.props.commandKey}
+            commandValue={this.props.commandValue}
+          />
+        )}
+        {this.props.calendar === "true" && <Calendar />}
 
-        <CommandList />
-        <News />
+        {this.props.commandList === "true" && <CommandList />}
+        {this.props.news === "true" && <News />}
       </div>
     );
   }
