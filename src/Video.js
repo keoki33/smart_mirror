@@ -25,6 +25,7 @@ class Video extends Component {
           // youtubeConfig={{
           //   playerVars: { enablejsapi: 1, autoplay: 1, playsinline: 0 }
           // }}
+          className="player"
           url={this.props.url}
           playing={this.props.playing}
           muted={this.props.muted}

@@ -42,7 +42,7 @@ class Home extends Component {
         )}
         {this.props.calendar === "true" && <Calendar />}
 
-        {this.props.commandList === "true" && <CommandList />}
+        {this.props.commands === "true" && <CommandList />}
         {this.props.news === "true" && <News />}
       </div>
     );

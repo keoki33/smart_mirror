@@ -167,6 +167,7 @@ body {
 
 .video {
   border: 1px solid #494949;
+  max-width: 60%;
 
   animation: fadeIn ease 3s;
   -webkit-animation: fadeIn ease 3s;
@@ -178,9 +179,9 @@ body {
 .videoFull {
   position: absolute;
   border: 1px solid #494949;
-  width: 83%;
+  width: 110vh;
   left: 15.5%;
-  height: 100%;
+  height: 100vh;
   z-index: 5;
 
   animation: fadeIn ease 3s;
@@ -188,6 +189,11 @@ body {
   -moz-animation: fadeIn ease 3s;
   -o-animation: fadeIn ease 3s;
   -ms-animation: fadeIn ease 3s;
+}
+
+.player {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .google {

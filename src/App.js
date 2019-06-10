@@ -25,7 +25,7 @@ class App extends Component {
     tfl: "true",
     google: "true",
     calendar: "true",
-    commandList: "true",
+    commands: "true",
     news: "true"
   };
 
@@ -40,7 +40,7 @@ class App extends Component {
       received: data => {
         // console.log("update_channel received data", data.key);
         this.setState({
-          commandList: data.command,
+          commandlist: data.command,
           commandKey: data.key,
           commandValue: data.value
         });
@@ -61,7 +61,7 @@ class App extends Component {
                 tfl: "true",
                 google: "true",
                 calendar: "true",
-                commandList: "true",
+                commands: "true",
                 news: "true"
               });
             else {
@@ -71,7 +71,7 @@ class App extends Component {
                 tfl: "false",
                 google: "false",
                 calendar: "false",
-                commandList: "false",
+                commands: "false",
                 news: "false"
               });
             }
@@ -121,7 +121,7 @@ class App extends Component {
                     tfl={this.state.tfl}
                     google={this.state.google}
                     calendar={this.state.calendar}
-                    commandList={this.state.commandList}
+                    commands={this.state.commands}
                     news={this.state.news}
                   />
                 )}
