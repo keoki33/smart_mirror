@@ -19,7 +19,8 @@ class App extends Component {
     playing: false,
     muted: false,
     volume: 1,
-    videoClass: "video"
+    videoClass: "video",
+    forecast: false
   };
 
   whatever = () => {};
@@ -52,6 +53,9 @@ class App extends Component {
           case "volume":
             this.setState({ muted: false, volume: 1 });
             break;
+          case "forecast":
+            this.setState({ forecast: data.value });
+            break;
           default:
         }
       }
@@ -77,6 +81,7 @@ class App extends Component {
                 render={props => (
                   <Home
                     {...props}
+                    forecast={this.state.forecast}
                     videoClass={this.state.videoClass}
                     url={this.state.url}
                     commandList={this.state.commandList}

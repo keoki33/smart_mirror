@@ -30,6 +30,12 @@ class CommandList extends Component {
             video
           </li>
           <li>Display "value" - test function. key: display, value: "value"</li>
+          <li>
+            Show forecast - show 7 day forecast. key: forecast, value: "true"
+          </li>
+          <li>
+            Close forecast - close 8 day forecast. key: forecast, value: "false"
+          </li>
         </ul>
       </div>
     );

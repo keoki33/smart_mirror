@@ -20,7 +20,9 @@ class Home extends Component {
     return (
       <div className="cards">
         <Weather weather={this.props.weather} />
-        <WeatherDetail weather={this.props.weather} />
+        {this.props.forecast === "true" && (
+          <WeatherDetail weather={this.props.weather} />
+        )}
         <Tfl />
         <Video
           videoClass={this.props.videoClass}
