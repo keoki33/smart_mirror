@@ -1,0 +1,26 @@
+import React, { Component } from 'react';
+import Header from './components/Header'
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
+
+
+class HogDetails extends Component {
+
+    state = {
+      
+    }
+
+    whatever = () => {}
+
+
+  render() {
+    return (
+      <div className="card">
+       <h1>Test</h1>
+      </div>
+    );
+  }
+}
+
+export default HogDetails;
+
