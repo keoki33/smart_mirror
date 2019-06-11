@@ -304,8 +304,8 @@ body {
 .stocks {
   margin-left: 15.5%;
   position: absolute;
-  bottom: 50px;
-  height: 50px;
+  bottom: 110px;
+  height: fit-content;
   width: 83%;
   white-space: nowrap;
   z-index: 3;

@@ -7,7 +7,6 @@ const quotes = [
   "Let us make our future now, and let us make our dreams tomorrow’s reality.",
   "All you need is the plan, the road map, and the courage to press on to your destination.",
   "The glow of one warm thought is to me worth more than money.",
-  "Once we believe in ourselves, we can risk curiosity, wonder, spontaneous delight, or any experience that reveals the human spirit.",
   "The power of imagination makes us infinite.",
   "Talk is cheap. Show me the code.",
   "Programs must be written for people to read, and only incidentally for machines to execute.",
@@ -21,6 +20,8 @@ const quotes = [
   "Be yourself; everyone else is already taken."
 ];
 
+var msg = new SpeechSynthesisUtterance("Hello World");
+
 class Quote extends Component {
   state = {};
 
@@ -28,11 +29,14 @@ class Quote extends Component {
     return quotes[Math.floor(Math.random() * quotes.length)];
   };
 
+  speak = () => {};
+
   render() {
     return (
       <div className="quote">
         Mani's thought for the day: <br />
         {this.displayQuote()}
+        {this.speak()}
       </div>
     );
   }

@@ -33,7 +33,7 @@ class Stocks extends Component {
     return (
       <div className="stocks">
         <Ticker>{() => this.showStocks()}</Ticker>
-        {console.log(this.state.stocksticker)}
+        {/* {console.log(this.state.stocksticker)} */}
       </div>
     );
   }
