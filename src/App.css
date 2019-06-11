@@ -252,33 +252,49 @@ body {
   float: left;
   border: 1px solid #494949;
   width: 20%;
-
-  height: 35vh;
+  height: 400px;
   background-color: #ffffff;
+
   padding: 10px;
 }
 
-.weatherDetail {
-  /* left: 15%; */
-  /* left: 100%; */
-  top: 5%;
-  position: absolute;
+.weatherCardBottom {
+  border-top: 3px solid rgb(107, 107, 107);
+  width: 90%;
+  padding: 10px;
 
+  /* color: rgb(0, 0, 0);
+
+  width: 99%;
+  height: ;
+  background-color: darkgrey;
+  border: 1px solid #ebebeb; */
+}
+
+.weatherDetail {
+  top: 3%;
+  position: absolute;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* align-items: flex-end; */
-  /* align-items: stretch; */
   justify-content: center;
-
-  /* grid-area: cards; */
   width: 83%;
-
   margin: 0 auto;
-  /* z-index: 3; */
-
   -webkit-animation: slide-in 2s forwards;
   animation: slide-in 2s forwards;
+}
+
+.weatherDetailOut {
+  top: 3%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 83%;
+  margin: 0 auto;
+  -webkit-animation: slide-out 2s forwards;
+  animation: slide-out 2s forwards;
 }
 
 /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */
@@ -343,5 +359,23 @@ body {
   }
   100% {
     left: 15%;
+  }
+}
+
+@-webkit-keyframes slide-out {
+  0% {
+    left: 15%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    left: 15%;
+  }
+  100% {
+    left: 100%;
   }
 }

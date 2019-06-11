@@ -9,8 +9,6 @@ import CommandList from "./CommandList";
 import News from "./News";
 import WeatherDetail from "./WeatherDetail";
 
-// import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-
 class Home extends Component {
   state = {};
 
@@ -20,10 +18,13 @@ class Home extends Component {
     return (
       <div className={this.props.cardsClass}>
         {this.props.weatherTiles === "true" && (
-          <Weather weather={this.props.weather} />
+          <Weather className="WeatherCards" weather={this.props.weather} />
         )}
         {this.props.forecast === "true" && (
-          <WeatherDetail weather={this.props.weather} />
+          <WeatherDetail
+            forecastClass={this.props.forecastClass}
+            weather={this.props.weather}
+          />
         )}
         {this.props.tfl === "true" && <Tfl />}
         <Video

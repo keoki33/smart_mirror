@@ -18,16 +18,17 @@ class App extends Component {
     on: "true",
     playing: false,
     muted: true,
-    volume: 0,
+    volume: 1,
     videoClass: "video",
-    forecast: false,
+    forecast: "false",
     weatherTiles: "true",
     tfl: "true",
     google: "true",
     calendar: "true",
     commands: "true",
     news: "true",
-    cardsClass: "cards"
+    cardsClass: "cards",
+    forecastClass: "weatherDetail"
   };
 
   whatever = () => {};
@@ -88,7 +89,22 @@ class App extends Component {
             this.setState({ muted: false, volume: 1 });
             break;
           case "forecast":
-            this.setState({ forecast: data.value });
+            if (data.value === "true") {
+              this.setState({
+                forecast: data.value,
+                forecastClass: "weatherDetail"
+              });
+            } else {
+              this.setState(
+                {
+                  forecastClass: "weatherDetailOut"
+                },
+                () =>
+                  setTimeout(() => {
+                    this.setState({ forecast: "false" });
+                  }, 2000)
+              );
+            }
             break;
           default:
         }
@@ -134,6 +150,7 @@ class App extends Component {
                     commands={this.state.commands}
                     news={this.state.news}
                     cardsClass={this.state.cardsClass}
+                    forecastClass={this.state.forecastClass}
                   />
                 )}
               />
