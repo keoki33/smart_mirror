@@ -4,9 +4,10 @@ import Google from "./Google";
 import Video from "./Video";
 import Weather from "./Weather";
 import Calendar from "./Calendar";
-import Quote from "./Quote";
+
 import CommandList from "./CommandList";
 import News from "./News";
+import Stocks from "./Stocks";
 import WeatherDetail from "./WeatherDetail";
 
 class Home extends Component {
@@ -27,6 +28,8 @@ class Home extends Component {
           />
         )}
         {this.props.tfl === "true" && <Tfl />}
+        {this.props.news === "true" && <News />}
+        {this.props.commands === "true" && <CommandList />}
         <Video
           videoClass={this.props.videoClass}
           url={this.props.url}
@@ -34,6 +37,9 @@ class Home extends Component {
           muted={this.props.muted}
           volume={this.props.volume}
         />
+
+        {this.props.calendar === "true" && <Calendar />}
+
         {this.props.google === "true" && (
           <Google
             commandList={this.props.commandList}
@@ -41,10 +47,6 @@ class Home extends Component {
             commandValue={this.props.commandValue}
           />
         )}
-        {this.props.calendar === "true" && <Calendar />}
-
-        {this.props.commands === "true" && <CommandList />}
-        {this.props.news === "true" && <News />}
       </div>
     );
   }

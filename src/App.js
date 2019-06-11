@@ -6,6 +6,7 @@ import ActionCable from "actioncable";
 import Home from "./Home";
 import Navbar from "./Navbar";
 import Quote from "./Quote";
+import Stocks from "./Stocks";
 
 class App extends Component {
   state = {
@@ -28,7 +29,8 @@ class App extends Component {
     commands: "true",
     news: "true",
     cardsClass: "cards",
-    forecastClass: "weatherDetail"
+    forecastClass: "weatherDetail",
+    stocks: "true"
   };
 
   whatever = () => {};
@@ -157,6 +159,7 @@ class App extends Component {
             )}
           </Switch>
         </Router>
+        <Stocks />
         <Quote />
       </div>
     );

@@ -6,8 +6,8 @@ body {
   margin: 0px;
   /* background: #eeeeee; */
   background: #000000;
-  max-height: 100vh;
-  max-width: 100vh;
+  /* max-height: 100vh;
+  max-width: 100vh; */
   font-weight: bold;
   overflow: hidden;
 }
@@ -16,6 +16,7 @@ body {
 }
 
 .main {
+  border: 1px solid #c70000;
   display: grid;
   grid-template-columns: 200px 1fr;
   height: 100vh;
@@ -69,6 +70,7 @@ body {
 /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */
 
 .cards {
+  border: 1px solid #494949;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -77,13 +79,13 @@ body {
 
   /* grid-area: cards; */
   width: 99%;
-
+  max-width: 99%;
   margin: 0 auto;
   /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 5px; */
+  height: 90%;
   max-height: 100vh;
-  /* overflow: auto; */
 }
 
 .card {
@@ -167,7 +169,7 @@ body {
 
 .video {
   border: 1px solid #494949;
-
+  width: 50%;
   animation: fadeIn ease 3s;
   -webkit-animation: fadeIn ease 3s;
   -moz-animation: fadeIn ease 3s;
@@ -189,6 +191,8 @@ body {
   -moz-animation: fadeIn ease 3s;
   -o-animation: fadeIn ease 3s;
   -ms-animation: fadeIn ease 3s;
+  -webkit-animation: fullscreen 0.5s forwards;
+  animation: fullscreen 0.5s forwards;
 }
 
 .player {
@@ -210,8 +214,8 @@ body {
 
 .calendar {
   width: fit-content;
-  height: 30vh;
-  overflow: auto;
+  height: fit-content;
+
   border: 1px solid #242424;
   padding: 5px;
 
@@ -297,6 +301,16 @@ body {
   animation: slide-out 2s forwards;
 }
 
+.stocks {
+  margin-left: 15.5%;
+  position: absolute;
+  bottom: 50px;
+  height: 50px;
+  width: 83%;
+  white-space: nowrap;
+  z-index: 3;
+}
+
 /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */
 
 @keyframes fadeIn {
@@ -377,5 +391,44 @@ body {
   }
   100% {
     left: 100%;
+  }
+}
+
+@-webkit-keyframes fullscreen {
+  0% {
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    top: 0%;
+    left: 15.1%;
+    width: 84%;
+    height: 89%;
+  }
+}
+
+@keyframes fullscreen {
+  0% {
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    top: 0%;
+    left: 15.1%;
+    width: 84%;
+    height: 89%;
+  }
+}
+
+@-webkit-keyframes scroll-left {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
   }
 }
