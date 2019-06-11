@@ -18,7 +18,7 @@ class App extends Component {
     on: "true",
     playing: false,
     muted: true,
-    volume: 1,
+    volume: 0,
     videoClass: "video",
     forecast: false,
     weatherTiles: "true",
@@ -51,7 +51,12 @@ class App extends Component {
             break;
           case "youtube":
             data.value === "true"
-              ? this.setState({ playing: true, volume: 1 })
+              ? this.setState({ playing: true }, () =>
+                  setTimeout(
+                    () => this.setState({ muted: false, volume: 1 }),
+                    8000
+                  )
+                )
               : this.setState({ playing: false });
             break;
           case "youtubeSize":
@@ -94,6 +99,8 @@ class App extends Component {
     )
       .then(resp => resp.json())
       .then(weather => this.setState({ weather }));
+    setTimeout(() => this.setState({ playing: true }), 1000);
+    setTimeout(() => this.setState({ playing: false }), 4000);
   }
 
   render() {

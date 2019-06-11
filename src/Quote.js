@@ -17,7 +17,8 @@ const quotes = [
   `I'm not a great programmer; I'm just a good programmer with great habits.`,
   `Walking on water and developing software from a specification are easy if both are frozen.`,
   `Try to be a rainbow in someone’s cloud.`,
-  `Happiness is not something you postpone for the future; it is something you design for the present.`
+  `Happiness is not something you postpone for the future; it is something you design for the present.`,
+  "Be yourself; everyone else is already taken."
 ];
 
 class Quote extends Component {
