@@ -6,12 +6,13 @@ class News extends Component {
     news: [],
     newsIndex: 0,
     imageUrl: "",
-    headline: ""
+    headline: "",
+    content: ""
   };
 
   componentDidMount() {
     fetch(
-      "https://newsapi.org/v2/top-headlines?country=gb&apiKey=2b346b31436940e5bef4dc0df775a12f"
+      "https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=2b346b31436940e5bef4dc0df775a12f"
     )
       .then(resp => resp.json())
       .then(news => this.setState({ news }, () => this.cycleHeadline()));
@@ -23,14 +24,15 @@ class News extends Component {
   }
 
   cycleHeadline = () => {
-    console.log(this.state.news.articles[this.state.newsIndex]);
-    console.log(this.state.newsIndex);
+    // console.log(this.state.news.articles[this.state.newsIndex]);
+    // console.log(this.state.newsIndex);
     if (this.state.newsIndex == this.state.news.articles.length) {
       this.setState({ newsIndex: 0 });
     }
     this.setState({
       imageUrl: this.state.news.articles[this.state.newsIndex].urlToImage,
       headline: this.state.news.articles[this.state.newsIndex].title,
+      content: this.state.news.articles[this.state.newsIndex].content,
       newsIndex: this.state.newsIndex + 1
     });
   };
@@ -49,6 +51,7 @@ class News extends Component {
         />
         <br />
         {this.state.headline}
+        {/* {this.state.content} */}
         {/* {console.log(this.state.news.articles)} */}
       </div>
     );

@@ -29,14 +29,16 @@ class Quote extends Component {
     return quotes[Math.floor(Math.random() * quotes.length)];
   };
 
-  speak = () => {};
+  // speak = () => {
+  //   var msg = new SpeechSynthesisUtterance("I see dead people!");
+  //   speechSynthesis.speak(msg);
+  // };
 
   render() {
     return (
       <div className="quote">
         Mani's thought for the day: <br />
         {this.displayQuote()}
-        {this.speak()}
       </div>
     );
   }

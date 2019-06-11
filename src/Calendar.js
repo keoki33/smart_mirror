@@ -15,6 +15,7 @@ class Calendar extends Component {
           frameborder="0"
           scrolling="no"
         />
+        {console.log("calendar")}
       </div>
     );
   }

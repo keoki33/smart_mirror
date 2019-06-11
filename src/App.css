@@ -278,7 +278,7 @@ body {
 .weatherDetail {
   top: 3%;
   position: absolute;
-  display: flex;
+  =display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -302,13 +302,19 @@ body {
 }
 
 .stocks {
-  margin-left: 15.5%;
+  margin-left: 0%;
   position: absolute;
   bottom: 110px;
   height: fit-content;
   width: 83%;
   white-space: nowrap;
   z-index: 3;
+
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
 
 /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */
