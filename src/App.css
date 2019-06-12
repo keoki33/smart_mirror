@@ -137,6 +137,11 @@ body {
   -moz-animation: fadeIn ease 2s;
   -o-animation: fadeIn ease 2s;
   -ms-animation: fadeIn ease 2s;
+
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .tube {
@@ -152,6 +157,12 @@ body {
   -moz-animation: fadeIn ease 3s;
   -o-animation: fadeIn ease 3s;
   -ms-animation: fadeIn ease 3s;
+
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: left;
 }
 
 .material-icons.check {
@@ -348,16 +359,22 @@ body {
   display: table;
   width: 100%;
 }
+
+.divTable {
+  justify-content: center;
+  align-items: center;
+}
+
 .divTableRow {
   display: table-row;
 }
 .divTableHeading {
   display: table-header-group;
 }
-.divTableCell,
-.divTableHead {
+.divTableCell {
   display: table-cell;
   padding: 1px 1px;
+  text-align: left;
 }
 .divTableHeading {
   display: table-header-group;
