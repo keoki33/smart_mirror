@@ -25,22 +25,18 @@ class WeatherTiles extends Component {
 
   render() {
     return (
-      <div className="divTable">
-        <div class="divTableBody">
-          <div class="divTableRow">
-            <div class="divTableCell">
-              <ReactAnimatedWeather
-                icon={this.showIcon()}
-                color="white"
-                size={20}
-              />
-            </div>
-            <div class="divTableCell">{this.showTime()}</div>
-            <div class="divTableCell">{this.props.weather.summary}:</div>
-            <div class="divTableCell">
-              {this.props.weather.temperature.toFixed(1)} {"C"}
-            </div>
-          </div>
+      <div class="weatherTable">
+        <div class="tw1">
+          <ReactAnimatedWeather
+            icon={this.showIcon()}
+            color="white"
+            size={20}
+          />
+        </div>
+        <div class="tw2">{this.showTime()}</div>
+        <div class="tw3">{this.props.weather.summary}:</div>
+        <div class="tw4">
+          {this.props.weather.temperature.toFixed(1)} {"C"}
         </div>
       </div>
     );

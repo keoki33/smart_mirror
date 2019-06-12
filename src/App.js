@@ -16,10 +16,10 @@ class App extends Component {
     commandList: [],
     commandValue: "",
     commandKey: "",
-    on: "true",
+    on: "false",
     playing: false,
-    muted: true,
-    volume: 1,
+    muted: "true",
+    volume: 0,
     videoClass: "video",
     forecast: "false",
     weatherTiles: "true",
@@ -55,10 +55,7 @@ class App extends Component {
           case "youtube":
             data.value === "true"
               ? this.setState({ playing: true }, () =>
-                  setTimeout(
-                    () => this.setState({ muted: false, volume: 1 }),
-                    8000
-                  )
+                  setTimeout(() => this.setState({}), 10000)
                 )
               : this.setState({ playing: false });
             break;
@@ -117,8 +114,8 @@ class App extends Component {
     )
       .then(resp => resp.json())
       .then(x => this.setState({ weather: x }));
-    setTimeout(() => this.setState({ playing: true }), 1000);
-    setTimeout(() => this.setState({ playing: false }), 4000);
+    // setTimeout(() => this.setState({ playing: true }), 1000);
+    // setTimeout(() => this.setState({ playing: false }), 4000);
   }
 
   render() {
