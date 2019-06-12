@@ -18,20 +18,28 @@ class TflTiles extends Component {
 
   render() {
     return (
-      <div>
-        <img
-          src={require(`./images/${this.props.line.name}.png`)}
-          alt=""
-          width="15"
-          height="15"
-        />{" "}
-        {this.props.line.name}:{" "}
-        {this.props.line["lineStatuses"][0]["statusSeverityDescription"]}{" "}
-        {this.showIcon()}
-        {/* {console.log(this.props.line)}
+      <div className="divTable">
+        <div class="divTableBody">
+          <div class="divTableRow">
+            <div class="divTableCell">
+              <img
+                src={require(`./images/${this.props.line.name}.png`)}
+                alt=""
+                width="15"
+                height="15"
+              />
+            </div>
+            <div class="divTableCell">{this.props.line.name}:</div>
+            <div class="divTableCell">
+              {this.props.line["lineStatuses"][0]["statusSeverityDescription"]}
+            </div>
+            <div class="divTableCell">{this.showIcon()}</div>
+            {/* {console.log(this.props.line)}
         {console.log(
           this.props.line["lineStatuses"][0]["statusSeverityDescription"]
         )} */}
+          </div>
+        </div>
       </div>
     );
   }

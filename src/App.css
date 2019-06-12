@@ -16,7 +16,7 @@ body {
 }
 
 .main {
-  border: 1px solid #0003c7;
+  /* border: 1px solid #0003c7; */
   display: grid;
   grid-template-columns: 215px 1fr;
   height: 99vh;
@@ -35,7 +35,7 @@ body {
   display: grid;
   grid-auto-rows: repeat(10 1fr);
   font-family: Orbitron;
-  border: 1px solid #242424;
+  /* border: 1px solid #242424; */
   font-weight: bold;
   letter-spacing: 2px;
   /* float: left;
@@ -72,7 +72,7 @@ body {
 /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */
 
 .cards {
-  border: 1px solid #ff0000;
+  /* border: 1px solid #ff0000; */
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
@@ -122,14 +122,14 @@ body {
   font-size: 2.5vh;
   font-weight: bold;
   text-align: center;
-  border: 1px solid #242424;
+  /* border: 1px solid #242424; */
   width: 83%;
 }
 
 .weather {
   grid-area: w;
-  width: fit-content;
-  border: 1px solid #242424;
+  width: 99%;
+  /* border: 1px solid #242424; */
   padding: 5px;
 
   animation: fadeIn ease 2s;
@@ -142,9 +142,9 @@ body {
 .tube {
   grid-area: t;
   font-size: 15px;
-  text-align: justify;
-  width: fit-content;
-  border: 1px solid #242424;
+
+  width: 99%;
+  /* border: 1px solid #242424; */
   padding: 5px;
 
   animation: fadeIn ease 3s;
@@ -338,6 +338,37 @@ body {
   -moz-animation: fadeIn ease 3s;
   -o-animation: fadeIn ease 3s;
   -ms-animation: fadeIn ease 3s;
+}
+
+/* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */
+
+.divTable {
+  text-align: left;
+  vertical-align: top;
+  display: table;
+  width: 100%;
+}
+.divTableRow {
+  display: table-row;
+}
+.divTableHeading {
+  display: table-header-group;
+}
+.divTableCell,
+.divTableHead {
+  display: table-cell;
+  padding: 1px 1px;
+}
+.divTableHeading {
+  display: table-header-group;
+  font-weight: bold;
+}
+.divTableFoot {
+  display: table-footer-group;
+  font-weight: bold;
+}
+.divTableBody {
+  display: table-row-group;
 }
 
 /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */
