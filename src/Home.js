@@ -8,6 +8,7 @@ import Calendar from "./Calendar";
 import CommandList from "./CommandList";
 import News from "./News";
 import Stocks from "./Stocks";
+import Todo from "./Todo";
 import WeatherDetail from "./WeatherDetail";
 
 class Home extends Component {
@@ -29,7 +30,7 @@ class Home extends Component {
         )}
         {this.props.tfl === "true" && <Tfl />}
         {this.props.news === "true" && <News />}
-        {this.props.commands === "true" && <CommandList />}
+        {/* {this.props.commands === "true" && <CommandList />} */}
         <Video
           videoClass={this.props.videoClass}
           url={this.props.url}
@@ -48,6 +49,7 @@ class Home extends Component {
           />
         )}
         <Stocks />
+        <Todo />
       </div>
     );
   }

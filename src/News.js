@@ -42,6 +42,8 @@ class News extends Component {
   render() {
     return (
       <div className="news">
+        <h4>{this.state.headline}</h4>
+
         <img
           width="336"
           height="252"
@@ -50,7 +52,7 @@ class News extends Component {
           className="newsImage"
         />
         <br />
-        {this.state.headline}
+
         {/* {this.state.content} */}
         {/* {console.log(this.state.news.articles)} */}
       </div>

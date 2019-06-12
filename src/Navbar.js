@@ -34,7 +34,7 @@ class Navbar extends Component {
       
      
       Wind: ${this.props.weather.currently.windSpeed} mph \n\n
-      Chance of Rain: \n
+      Chance of \n\n rain: \n
        ${this.props.weather.currently.windSpeed}%
       `;
   };
