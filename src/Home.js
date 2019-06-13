@@ -31,7 +31,11 @@ class Home extends Component {
         )}
         {this.props.tfl === "true" && <Tfl />}
         {this.props.news === "true" && (
-          <News newsClass={this.props.newsClass} />
+          <News
+            sendEmail={this.props.sendEmail}
+            newsClass={this.props.newsClass}
+            email={this.props.email}
+          />
         )}
         {/* {this.props.commands === "true" && <CommandList />} */}
         <Video

@@ -40,7 +40,9 @@ class Navbar extends Component {
   };
 
   speak = () => {
-    var msg = new SpeechSynthesisUtterance(`I see ${this.state.test}`);
+    var msg = new SpeechSynthesisUtterance(
+      "Talk to speech armed. I am ready to talk to you"
+    );
 
     speechSynthesis.speak(msg);
   };

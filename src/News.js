@@ -34,6 +34,12 @@ class News extends Component {
     clearInterval(this.interval);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.email !== this.props.email) {
+      this.props.sendEmail(this.state.articleUrl);
+    }
+  }
+
   cycleHeadline = () => {
     // console.log(this.state.news.articles[this.state.newsIndex]);
     // console.log(this.state.newsIndex);
@@ -72,7 +78,7 @@ class News extends Component {
         <h2>{this.state.content}</h2>
 
         {/* {this.state.content} */}
-        {console.log(this.state.news.articles)}
+        {/* {console.log(this.state.news.articles)} */}
       </div>
     );
   }

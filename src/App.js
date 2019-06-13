@@ -34,7 +34,9 @@ class App extends Component {
     forecastClass: "weatherDetail",
     stocks: "true",
     fullweather: "true",
-    newsClass: ""
+    newsClass: "",
+    email: "",
+    emailAddress: ""
   };
 
   whatever = () => {};
@@ -142,6 +144,9 @@ class App extends Component {
                 }, 2000)
             );
             break;
+          case "email":
+            this.setState({ email: Math.floor(Math.random() * 1000) });
+            break;
           default:
         }
       }
@@ -152,6 +157,10 @@ class App extends Component {
       .then(resp => resp.json())
       .then(x => this.setState({ weather: x }));
   }
+
+  sendEmail = x => {
+    console.log(x);
+  };
 
   render() {
     return (
@@ -186,6 +195,8 @@ class App extends Component {
                     cardsClass={this.state.cardsClass}
                     forecastClass={this.state.forecastClass}
                     newsClass={this.state.newsClass}
+                    sendEmail={this.sendEmail}
+                    email={this.state.email}
                   />
                 )}
               />
