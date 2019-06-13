@@ -3,7 +3,7 @@ import ReactAnimatedWeather from "react-animated-weather";
 import Clock from "react-live-clock";
 
 class Navbar extends Component {
-  state = { time: "" };
+  state = { time: "", test: "this is a test" };
 
   whatever = () => {};
 
@@ -39,9 +39,22 @@ class Navbar extends Component {
       `;
   };
 
+  speak = () => {
+    var msg = new SpeechSynthesisUtterance(`I see ${this.state.test}`);
+
+    speechSynthesis.speak(msg);
+  };
+
+  componentW;
+
   render() {
     return (
-      <div className="navbar">
+      <div
+        className="navbar"
+        onClick={event => {
+          this.speak();
+        }}
+      >
         <div className="navWeather">
           <ReactAnimatedWeather
             icon={this.showIcon()}

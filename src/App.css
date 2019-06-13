@@ -9,7 +9,7 @@ body {
   /* max-height: 100vh;
   max-width: 100vh; */
   font-weight: bold;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #main {
@@ -81,14 +81,14 @@ body {
   max-width: 111vh;
   max-height: 92vh;
   grid-template-areas:
-    " t t t n n n c c c c"
-    " t t t n n n c c c c"
-    " t t t n n n c c c c"
-    " t t t n n n c c c c"
-    " w w w v v v c c c c"
-    " w w w v v v c c c c"
-    " w w w v v v c c c c"
-    " w w w v v v c c c c"
+    " t t t t . . . . c c"
+    " t t t t . . . . c c"
+    " t t t t . . . . c c"
+    " w w w w v v v . c c"
+    " w w w w v v v . c c"
+    " w w w w v v v . c c"
+    " w w w w v v v . c c"
+    " w w w w v v v . c c"
     " g g g to to to to to to to"
     " s s s s s s s s s s ";
 }
@@ -270,8 +270,9 @@ body {
 
 .calendar {
   grid-area: c;
-  width: fit-content;
+  width: 98%;
   height: fit-content;
+  overflow: hidden;
 
   /* border: 1px solid #242424; */
   padding: 5px;
@@ -283,18 +284,73 @@ body {
   -ms-animation: fadeIn ease 3s;
 }
 
-.news {
-  grid-area: n;
-  /* border: 1px solid #494949; */
-  width: 336px;
-  height: fit-content;
-  background-color: #1d1d1d;
-  animation: fadeIn ease 3s;
-  -webkit-animation: fadeIn ease 3s;
-  -moz-animation: fadeIn ease 3s;
-  -o-animation: fadeIn ease 3s;
-  -ms-animation: fadeIn ease 3s;
-  padding: 5px;
+.fullcalendarin {
+  margin-top: 1.5%;
+  margin-left: 2%;
+  position: absolute;
+  z-index: 5;
+  -webkit-animation: slide-in 2s forwards;
+  animation: slide-in 2s forwards;
+}
+
+.fullcalendarout {
+  position: absolute;
+  margin-top: 1.5%;
+  z-index: 5;
+  margin-left: 2%;
+  -webkit-animation: slide-out 2s forwards;
+  animation: slide-out 2s forwards;
+}
+
+.todo {
+  position: absolute;
+  margin-left: 2%;
+  margin-top: 50%;
+  z-index: 5;
+  -webkit-animation: slide-in 2s forwards;
+  animation: slide-in 2s forwards;
+  z-index: 5;
+}
+
+.birthdays {
+  position: absolute;
+  z-index: 5;
+  margin-left: 2%;
+  margin-top: 50%;
+}
+
+.newsin {
+  text-align: center;
+  color: #000000;
+  position: absolute;
+  border: 1px solid #494949;
+  background-color: #ffffff;
+  max-width: 50%;
+  margin-top: 0.5%;
+  margin-left: 0.8%;
+
+  max-height: 99%;
+  z-index: 4;
+
+  -webkit-animation: slide-in 1s forwards;
+  animation: slide-in 1s forwards;
+}
+
+.newsout {
+  text-align: center;
+  color: #000000;
+  position: absolute;
+  border: 1px solid #494949;
+  background-color: #ffffff;
+  max-width: 50%;
+  margin-top: 0.5%;
+  margin-left: 0.8%;
+
+  max-height: 99%;
+  z-index: 4;
+
+  -webkit-animation: slide-out 1s forwards;
+  animation: slide-out 1s forwards;
 }
 
 .command {
@@ -377,19 +433,6 @@ body {
   -moz-animation: fadeIn ease 2s;
   -o-animation: fadeIn ease 2s;
   -ms-animation: fadeIn ease 2s;
-}
-
-.todo {
-  position: relative;
-  grid-area: to;
-  top: 20%;
-  z-index: 1;
-
-  animation: fadeIn ease 3s;
-  -webkit-animation: fadeIn ease 3s;
-  -moz-animation: fadeIn ease 3s;
-  -o-animation: fadeIn ease 3s;
-  -ms-animation: fadeIn ease 3s;
 }
 
 /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */
@@ -542,11 +585,20 @@ body {
   }
 }
 
-@-webkit-keyframes scroll-left {
+@-webkit-keyframes bounce-in {
   0% {
-    -webkit-transform: translateX(100%);
+    top: 100%;
   }
   100% {
-    -webkit-transform: translateX(-100%);
+    top: 15%;
   }
 }
+
+/* @keyframes bounce-in {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 15%;
+  }
+} */

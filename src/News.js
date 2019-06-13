@@ -1,13 +1,22 @@
 import React, { Component } from "react";
 import NewsTile from "./NewsTile";
 
+var synth = window.speechSynthesis;
+
 class News extends Component {
   state = {
     news: [],
     newsIndex: 0,
     imageUrl: "",
     headline: "",
-    content: ""
+    content: "",
+    description: "",
+    articleUrl: ""
+  };
+
+  speak = text => {
+    var msg = new SpeechSynthesisUtterance(text);
+    speechSynthesis.speak(msg);
   };
 
   componentDidMount() {
@@ -16,10 +25,12 @@ class News extends Component {
     )
       .then(resp => resp.json())
       .then(news => this.setState({ news }, () => this.cycleHeadline()));
-    this.interval = setInterval(() => this.cycleHeadline(), 10000);
+
+    this.interval = setInterval(() => this.cycleHeadline(), 20000);
   }
 
   componentWillUnmount() {
+    synth.cancel();
     clearInterval(this.interval);
   }
 
@@ -29,21 +40,27 @@ class News extends Component {
     if (this.state.newsIndex == this.state.news.articles.length) {
       this.setState({ newsIndex: 0 });
     }
-    this.setState({
-      imageUrl: this.state.news.articles[this.state.newsIndex].urlToImage,
-      headline: this.state.news.articles[this.state.newsIndex].title,
-      content: this.state.news.articles[this.state.newsIndex].content,
-      newsIndex: this.state.newsIndex + 1
-    });
-  };
 
-  whatever = () => {};
+    this.setState(
+      {
+        imageUrl: this.state.news.articles[this.state.newsIndex].urlToImage,
+        headline: this.state.news.articles[this.state.newsIndex].title,
+        content: this.state.news.articles[this.state.newsIndex].content,
+        description: this.state.news.articles[this.state.newsIndex].description,
+        articleUrl: this.state.news.articles[this.state.newsIndex].url,
+        newsIndex: this.state.newsIndex + 1
+      },
+      () =>
+        setTimeout(() => {
+          this.speak(`${this.state.headline} , , ${this.state.description}`);
+        }, 2000)
+    );
+  };
 
   render() {
     return (
-      <div className="news">
-        <h4>{this.state.headline}</h4>
-
+      <div className={this.props.newsClass}>
+        <h1>{this.state.headline}</h1>
         <img
           width="336"
           height="252"
@@ -52,9 +69,10 @@ class News extends Component {
           className="newsImage"
         />
         <br />
+        <h2>{this.state.content}</h2>
 
         {/* {this.state.content} */}
-        {/* {console.log(this.state.news.articles)} */}
+        {console.log(this.state.news.articles)}
       </div>
     );
   }

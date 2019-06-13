@@ -8,6 +8,8 @@ import Navbar from "./Navbar";
 import Quote from "./Quote";
 import Stocks from "./Stocks";
 
+var synth = window.speechSynthesis;
+
 class App extends Component {
   state = {
     url:
@@ -16,10 +18,10 @@ class App extends Component {
     commandList: [],
     commandValue: "",
     commandKey: "",
-    on: "false",
+    on: "true",
     playing: false,
-    muted: "true",
-    volume: 0,
+    muted: false,
+    volume: 1,
     videoClass: "video",
     forecast: "false",
     weatherTiles: "true",
@@ -27,10 +29,12 @@ class App extends Component {
     google: "true",
     calendar: "true",
     commands: "true",
-    news: "true",
+    news: "false",
     cardsClass: "cards",
     forecastClass: "weatherDetail",
-    stocks: "true"
+    stocks: "true",
+    fullweather: "true",
+    newsClass: ""
   };
 
   whatever = () => {};
@@ -54,9 +58,7 @@ class App extends Component {
             break;
           case "youtube":
             data.value === "true"
-              ? this.setState({ playing: true }, () =>
-                  setTimeout(() => this.setState({}), 10000)
-                )
+              ? this.setState({ playing: true })
               : this.setState({ playing: false });
             break;
           case "youtubeSize":
@@ -91,7 +93,8 @@ class App extends Component {
             if (data.value === "true") {
               this.setState({
                 forecast: data.value,
-                forecastClass: "weatherDetail"
+                forecastClass: "weatherDetail",
+                playing: false
               });
             } else {
               this.setState(
@@ -105,6 +108,40 @@ class App extends Component {
               );
             }
             break;
+          case "news":
+            if (data.value === "true") {
+              this.setState({
+                news: data.value,
+                newsClass: "newsin",
+                playing: false
+              });
+            } else {
+              this.setState(
+                {
+                  newsClass: "newsout"
+                },
+                () =>
+                  setTimeout(() => {
+                    this.setState({ news: "false" });
+                  }, 2000)
+              );
+            }
+            break;
+          case "close":
+            this.setState(
+              {
+                forecastClass: "weatherDetailOut",
+                newsClass: "newsout"
+              },
+              () =>
+                setTimeout(() => {
+                  this.setState({
+                    forecast: "false",
+                    news: "false"
+                  });
+                }, 2000)
+            );
+            break;
           default:
         }
       }
@@ -114,8 +151,6 @@ class App extends Component {
     )
       .then(resp => resp.json())
       .then(x => this.setState({ weather: x }));
-    // setTimeout(() => this.setState({ playing: true }), 1000);
-    // setTimeout(() => this.setState({ playing: false }), 4000);
   }
 
   render() {
@@ -150,6 +185,7 @@ class App extends Component {
                     news={this.state.news}
                     cardsClass={this.state.cardsClass}
                     forecastClass={this.state.forecastClass}
+                    newsClass={this.state.newsClass}
                   />
                 )}
               />
