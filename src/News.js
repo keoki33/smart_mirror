@@ -26,7 +26,7 @@ class News extends Component {
       .then(resp => resp.json())
       .then(news => this.setState({ news }, () => this.cycleHeadline()));
 
-    this.interval = setInterval(() => this.cycleHeadline(), 10000);
+    this.interval = setInterval(() => this.cycleHeadline(), 1000);
   }
 
   componentWillUnmount() {
@@ -62,7 +62,7 @@ class News extends Component {
       },
       () =>
         setTimeout(() => {
-          this.speak(`${this.state.headline} , , ${this.state.description}`);
+          // this.speak(`${this.state.headline} , , ${this.state.description}`);
         }, 2000)
     );
   };
@@ -72,8 +72,8 @@ class News extends Component {
       <div className={this.props.newsClass}>
         <h1>{this.state.headline}</h1>
         <img
-          width="336"
-          height="252"
+          width="512"
+          height="384"
           src={this.state.imageUrl}
           alt={this.state.imageUrl}
           className="newsImage"

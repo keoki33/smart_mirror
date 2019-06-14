@@ -171,13 +171,6 @@ body {
   -ms-animation: fadeIn ease 3s; */
 }
 
-.tube:hover {
-  transform: rotateY(180deg);
-  transition: transform 2s;
-  transform-style: preserve-3d;
-  transform-origin: 30%;
-}
-
 .tflrows {
   display: grid;
   grid-template-columns: repeat(15, 5%);
@@ -351,16 +344,18 @@ body {
 }
 
 .newsin {
-  padding: 2%;
+  padding: 1.5%;
   text-align: center;
   color: #000000;
   position: absolute;
-  border: 1px solid #494949;
+  /* border: 1px solid #494949; */
   background-color: #ffffff;
-  max-width: 50%;
+  width: 40%;
   /* margin-top: 20%;
   margin-left: 10%; */
-  top: 15%;
+  height: fit-content;
+  top: 10%;
+  /* bottom: 10%; */
   margin-left: 15%;
 
   max-height: 99%;
@@ -368,6 +363,13 @@ body {
 
   -webkit-animation: slide-in 1s forwards;
   animation: slide-in 1s forwards;
+}
+
+.tue:hover {
+  transform: rotateY(180deg);
+  transition: transform 2s;
+  transform-style: preserve-3d;
+  transform-origin: 30%;
 }
 
 .newsout {
