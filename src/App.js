@@ -19,22 +19,30 @@ class App extends Component {
     commandValue: "",
     commandKey: "",
     on: "true",
+
     playing: false,
     muted: false,
     volume: 1,
+
+    cardsClass: "cards",
+    forecastClass: "weatherDetail",
+    newsClass: "",
+    tflClass: "tube",
+    weatherClass: "weather",
+    calendarClass: "calendar",
+    stocksClass: "stocks",
     videoClass: "video",
+
     forecast: "false",
     weatherTiles: "true",
     tfl: "true",
-    google: "true",
+    google: "false",
     calendar: "true",
     commands: "true",
     news: "false",
-    cardsClass: "cards",
-    forecastClass: "weatherDetail",
     stocks: "true",
     fullweather: "true",
-    newsClass: "",
+
     email: "",
     emailAddress: ""
   };
@@ -96,6 +104,11 @@ class App extends Component {
               this.setState({
                 forecast: data.value,
                 forecastClass: "weatherDetail",
+                tflClass: "tube clear",
+                weatherClass: "weather clear",
+                calendarClass: "calendar clear",
+                stocksClass: "stocks clear",
+                videoClass: "video clear",
                 playing: false
               });
             } else {
@@ -132,6 +145,11 @@ class App extends Component {
           case "close":
             this.setState(
               {
+                tflClass: "tube",
+                weatherClass: "weather",
+                calendarClass: "calendar",
+                stocksClass: "stocks",
+                videoClass: "video",
                 forecastClass: "weatherDetailOut",
                 newsClass: "newsout"
               },
@@ -211,6 +229,10 @@ class App extends Component {
                     newsClass={this.state.newsClass}
                     sendEmail={this.sendEmail}
                     email={this.state.email}
+                    weatherClass={this.state.weatherClass}
+                    tflClass={this.state.tflClass}
+                    calendarClass={this.state.calendarClass}
+                    stocksClass={this.state.stocksClass}
                   />
                 )}
               />

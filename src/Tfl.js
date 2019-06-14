@@ -42,7 +42,7 @@ class Tfl extends Component {
 
   render() {
     return (
-      <div className="tube">
+      <div className={this.props.tflClass}>
         {/* console.log("test") */}
         {this.displayStatus()}
       </div>

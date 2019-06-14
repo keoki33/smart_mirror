@@ -9,7 +9,7 @@ body {
   /* max-height: 100vh;
   max-width: 100vh; */
   font-weight: bold;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 #main {
@@ -18,7 +18,7 @@ body {
 .main {
   /* border: 1px solid #0003c7; */
   display: grid;
-  grid-template-columns: 215px 1fr;
+  grid-template-columns: 200px 1fr;
   height: 99vh;
   max-height: 99vh;
   max-width: 99%;
@@ -37,7 +37,7 @@ body {
   font-family: Orbitron;
   /* border: 1px solid #242424; */
   font-weight: bold;
-  letter-spacing: 2px;
+
   /* float: left;
   position: relative; */
   /* grid-area: nav; */
@@ -54,7 +54,7 @@ body {
 
 .clock {
   grid-row: 10;
-  text-align: center;
+  /* text-align: justify; */
 
   font-size: 2.8vh;
   white-space: pre-line;
@@ -65,12 +65,23 @@ body {
   grid-row: 2;
   margin-left: 15px;
   white-space: pre-line;
-  font-size: 1.9vh;
-  line-height: 1.8vh;
+  font-size: 2vh;
+  line-height: 2.2vh;
+  letter-spacing: 1px;
+  padding: 1px;
 }
 
 /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */ /* ALL CARDS */
 
+.line {
+  position: relative;
+  border-top: 3px solid #4e4e4e;
+  left: 5%;
+  bottom: 10%;
+  width: 60%;
+  z-index: 6;
+  opacity: 0.8;
+}
 .cards {
   /* border: 1px solid #ff0000; */
   display: grid;
@@ -81,15 +92,15 @@ body {
   max-width: 111vh;
   max-height: 92vh;
   grid-template-areas:
+    " . . . . . . . . . ."
     " t t t t . . . . c c"
     " t t t t . . . . c c"
     " t t t t . . . . c c"
+    " . . . . v v v . c c"
     " w w w w v v v . c c"
     " w w w w v v v . c c"
     " w w w w v v v . c c"
-    " w w w w v v v . c c"
-    " w w w w v v v . c c"
-    " g g g to to to to to to to"
+    " w w w w v v v . . ."
     " s s s s s s s s s s ";
 }
 
@@ -143,10 +154,13 @@ body {
 .tube {
   grid-area: t;
   font-size: 15px;
-
+  height: 120%;
   width: 99%;
   /* border: 1px solid #242424; */
   padding: 5px;
+
+  /* -webkit-box-shadow: 5px 5px 14px 1px rgba(255, 255, 255, 0.75);
+  box-shadow: 5px 5px 14px 1px rgba(255, 255, 255, 0.75); */
 
   animation: fadeIn ease 3s;
   -webkit-animation: fadeIn ease 3s;
@@ -157,16 +171,21 @@ body {
 
 .tflrows {
   display: grid;
-  grid-template-columns: repeat(15, 6%);
+  grid-template-columns: repeat(15, 5%);
   white-space: nowrap;
   padding: 3px;
+  line-height: 2vh;
 }
 
 .weatherTable {
   display: grid;
   grid-template-columns: repeat(15, 6%);
+  line-height: 2.5vh;
 
-  white-space: nowrap;
+  /* grid-template-rows: repeat auto(fit-content, 1fr); */
+
+  /* white-space: nowrap; */
+
   /* padding: 3px; */
 }
 
@@ -179,11 +198,13 @@ body {
 }
 
 .t3 {
-  grid-column: 10/14;
+  grid-column: 9/14;
+  margin-left: 7%;
 }
 
 .t4 {
-  grid-column: last;
+  margin-left: 30%;
+  grid-column: 15;
 }
 
 .tw1 {
@@ -196,11 +217,12 @@ body {
 }
 
 .tw3 {
-  grid-column: 5/10;
+  grid-column: 4/10;
 }
 
 .tw4 {
-  grid-column: 14;
+  grid-column: 10/14;
+  margin-left: 10%;
 }
 
 .material-icons.check {
@@ -422,17 +444,23 @@ body {
   grid-area: s;
   margin-left: 0%;
   position: absolute;
-  bottom: 89px;
+  bottom: 14%;
   height: fit-content;
   width: 83%;
   white-space: nowrap;
-  z-index: 3;
+  z-index: 4;
 
   animation: fadeIn ease 2s;
   -webkit-animation: fadeIn ease 2s;
   -moz-animation: fadeIn ease 2s;
   -o-animation: fadeIn ease 2s;
   -ms-animation: fadeIn ease 2s;
+}
+
+.clear {
+  /* -webkit-animation: fade 2s forwards;
+  animation: fade 2s forwards; */
+  opacity: 0.3;
 }
 
 /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */
@@ -602,3 +630,21 @@ body {
     left: 15%;
   }
 } */
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}

@@ -27,14 +27,14 @@ class Navbar extends Component {
 
   displayWeather = () => {
     return `
-    ${this.props.weather.currently.summary} \n\n
-    Current: ${this.props.weather.currently.temperature.toFixed(1)} C \n
+     ${this.props.weather.currently.temperature.toFixed(1)} C \n
+     ${this.props.weather.currently.summary} \n\n\n
     Low: ${this.props.weather.daily.data[0].temperatureLow.toFixed(1)} C \n
-    High: ${this.props.weather.daily.data[0].temperatureHigh.toFixed(1)} C \n\
-      
-     
-      Wind: ${this.props.weather.currently.windSpeed} mph \n\n
-      Chance of \n\n rain: \n
+    High: ${this.props.weather.daily.data[0].temperatureHigh.toFixed(
+      1
+    )} C \n\n\n
+      Wind: \n\n ${this.props.weather.currently.windSpeed} mph \n\n
+      Chance of \n rain: \n
        ${this.props.weather.currently.windSpeed}%
       `;
   };
@@ -58,12 +58,13 @@ class Navbar extends Component {
         }}
       >
         <div className="navWeather">
+          <br />
           <ReactAnimatedWeather
             icon={this.showIcon()}
             color="white"
             size={80}
           />
-          <br />
+
           <br />
           {this.props.weather.length !== 0 && this.displayWeather()}
         </div>
@@ -79,7 +80,7 @@ class Navbar extends Component {
           <Clock
             ticking={true}
             className="clock"
-            format={"MMMM Do hh:mm:ss A"}
+            format={"MMMM Do hh:mm:ss  A"}
             timezone={"Europe/London"}
           />
         </div>

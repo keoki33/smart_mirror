@@ -21,7 +21,11 @@ class Home extends Component {
     return (
       <div className={this.props.cardsClass}>
         {this.props.weatherTiles === "true" && (
-          <Weather className="WeatherCards" weather={this.props.weather} />
+          <Weather
+            weatherClass={this.props.weatherClass}
+            className="WeatherCards"
+            weather={this.props.weather}
+          />
         )}
         {this.props.forecast === "true" && (
           <WeatherDetail
@@ -29,7 +33,8 @@ class Home extends Component {
             weather={this.props.weather}
           />
         )}
-        {this.props.tfl === "true" && <Tfl />}
+        {this.props.tfl === "true" && <Tfl tflClass={this.props.tflClass} />}
+
         {this.props.news === "true" && (
           <News
             sendEmail={this.props.sendEmail}
@@ -46,7 +51,9 @@ class Home extends Component {
           volume={this.props.volume}
         />
 
-        {this.props.calendar === "true" && <Calendar />}
+        {this.props.calendar === "true" && (
+          <Calendar calendarClass={this.props.calendarClass} />
+        )}
 
         {this.props.google === "true" && (
           <Google
@@ -55,7 +62,7 @@ class Home extends Component {
             commandValue={this.props.commandValue}
           />
         )}
-        <Stocks />
+        <Stocks stocksClass={this.props.stocksClass} />
 
         {/* <FullCalendar /> */}
       </div>
