@@ -36,7 +36,11 @@ class News extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.email !== this.props.email) {
-      this.props.sendEmail(this.state.articleUrl);
+      this.props.sendEmail(
+        this.state.articleUrl,
+        this.state.imageUrl,
+        this.state.headline
+      );
     }
   }
 
@@ -76,9 +80,8 @@ class News extends Component {
         />
         <br />
         <h2>{this.state.content}</h2>
-
         {/* {this.state.content} */}
-        {/* {console.log(this.state.news.articles)} */}
+        {/* {console.log(this.state.news.articles)} */}=
       </div>
     );
   }

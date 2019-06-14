@@ -145,7 +145,10 @@ class App extends Component {
             );
             break;
           case "email":
-            this.setState({ email: Math.floor(Math.random() * 1000) });
+            this.setState({
+              email: Math.floor(Math.random() * 1000),
+              emailAddress: data.value
+            });
             break;
           default:
         }
@@ -158,8 +161,19 @@ class App extends Component {
       .then(x => this.setState({ weather: x }));
   }
 
-  sendEmail = x => {
-    console.log(x);
+  sendEmail = (url, imageurl, headline) => {
+    fetch("https://boiling-tundra-71042.herokuapp.com/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        url: url,
+        email: this.state.emailAddress,
+        imageurl: imageurl,
+        headline: headline
+      })
+    });
   };
 
   render() {
