@@ -64,7 +64,23 @@ class App extends Component {
         });
         switch (data.key) {
           case "on":
-            this.setState({ on: data.value });
+            if (data.value === "true")
+              this.setState({
+                tflClass: "tube",
+                weatherClass: "weather",
+                calendarClass: "calendar",
+                stocksClass: "stocks",
+                videoClass: "video"
+              });
+            else {
+              this.setState({
+                tflClass: "tube blank",
+                weatherClass: "weather blank",
+                calendarClass: "calendar blank",
+                stocksClass: "stocks blank",
+                videoClass: "video blank"
+              });
+            }
             break;
           case "youtube":
             data.value === "true"
@@ -78,10 +94,10 @@ class App extends Component {
                 videoClass: data.value,
                 weatherTiles: "true",
                 tfl: "true",
-                google: "true",
+                google: "false",
                 calendar: "true",
-                commands: "true",
-                news: "true"
+                commands: "false",
+                news: "false"
               });
             else {
               this.setState({
@@ -128,6 +144,12 @@ class App extends Component {
               this.setState({
                 news: data.value,
                 newsClass: "newsin",
+
+                tflClass: "tube clear",
+                weatherClass: "weather clear",
+                calendarClass: "calendar clear",
+                stocksClass: "stocks clear",
+                videoClass: "video clear",
                 playing: false
               });
             } else {

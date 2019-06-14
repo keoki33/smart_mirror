@@ -158,15 +158,24 @@ body {
   width: 99%;
   /* border: 1px solid #242424; */
   padding: 5px;
+  perspective: 1000px;
+  background-color: transparent;
 
   /* -webkit-box-shadow: 5px 5px 14px 1px rgba(255, 255, 255, 0.75);
   box-shadow: 5px 5px 14px 1px rgba(255, 255, 255, 0.75); */
 
-  animation: fadeIn ease 3s;
+  /* animation: fadeIn ease 3s;
   -webkit-animation: fadeIn ease 3s;
   -moz-animation: fadeIn ease 3s;
   -o-animation: fadeIn ease 3s;
-  -ms-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s; */
+}
+
+.tube:hover {
+  transform: rotateY(180deg);
+  transition: transform 2s;
+  transform-style: preserve-3d;
+  transform-origin: 30%;
 }
 
 .tflrows {
@@ -342,17 +351,20 @@ body {
 }
 
 .newsin {
+  padding: 2%;
   text-align: center;
   color: #000000;
   position: absolute;
   border: 1px solid #494949;
   background-color: #ffffff;
   max-width: 50%;
-  margin-top: 0.5%;
-  margin-left: 0.8%;
+  /* margin-top: 20%;
+  margin-left: 10%; */
+  top: 15%;
+  margin-left: 15%;
 
   max-height: 99%;
-  z-index: 4;
+  z-index: 5;
 
   -webkit-animation: slide-in 1s forwards;
   animation: slide-in 1s forwards;
@@ -444,7 +456,7 @@ body {
   grid-area: s;
   margin-left: 0%;
   position: absolute;
-  bottom: 14%;
+  bottom: 13%;
   height: fit-content;
   width: 83%;
   white-space: nowrap;
@@ -458,9 +470,14 @@ body {
 }
 
 .clear {
-  /* -webkit-animation: fade 2s forwards;
-  animation: fade 2s forwards; */
-  opacity: 0.3;
+  -webkit-animation: fade 2s forwards;
+  animation: fade 2s forwards;
+  /* opacity: 0.3; */
+}
+
+.blank {
+  -webkit-animation: blank 2s forwards;
+  animation: blank 2s forwards;
 }
 
 /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */
@@ -646,5 +663,41 @@ body {
   }
   100% {
     opacity: 0.3;
+  }
+}
+
+@-webkit-keyframes blank {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blank {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes top-in {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes top-in {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

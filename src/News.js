@@ -26,7 +26,7 @@ class News extends Component {
       .then(resp => resp.json())
       .then(news => this.setState({ news }, () => this.cycleHeadline()));
 
-    this.interval = setInterval(() => this.cycleHeadline(), 20000);
+    this.interval = setInterval(() => this.cycleHeadline(), 10000);
   }
 
   componentWillUnmount() {
@@ -81,7 +81,7 @@ class News extends Component {
         <br />
         <h2>{this.state.content}</h2>
         {/* {this.state.content} */}
-        {/* {console.log(this.state.news.articles)} */}=
+        {/* {console.log(this.state.news.articles)} */}
       </div>
     );
   }
