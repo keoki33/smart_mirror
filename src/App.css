@@ -126,7 +126,7 @@ body {
 
 .quote {
   position: absolute;
-  bottom: 15px;
+  bottom: 30px;
   margin-left: 15.5%;
   font-family: "Playfair Display", serif;
   font-size: 2.5vh;
@@ -322,31 +322,45 @@ body {
 .fullcalendarin {
   position: absolute;
   z-index: 6;
-
-  animation: slide-in ease 2s forwards;
+  left: 17%;
+  top: 2%;
+  width: 100%;
+  animation: top-in ease 2s forwards;
 }
 
 .fullcalendarout {
   position: absolute;
-
   z-index: 6;
-
-  animation: slide-out ease 2s forwards;
+  left: 17%;
+  top: 2%;
+  width: 100%;
+  animation: top-out ease 2s forwards;
 }
 
 .fullcalendarinb {
   position: absolute;
   z-index: 6;
-
-  animation: slide-in 2s forwards;
+  left: 17%;
+  top: 67%;
+  animation: bottom-in ease 2s forwards;
 }
+
+/* .fullcalendarinb > ul {
+  color: #000000;
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  z-index: 7;
+  width: 100%;
+  background-color: #ffffff;
+} */
 
 .fullcalendaroutb {
   position: absolute;
-
   z-index: 6;
-
-  animation: slide-out 2s forwards;
+  left: 17%;
+  top: 70%;
+  animation: bottom-out ease 2s forwards;
 }
 
 .todo {
@@ -689,20 +703,50 @@ body {
   }
 }
 
-@-webkit-keyframes top-in {
+@keyframes top-in {
   0% {
-    opacity: 1;
+    transform: translateY(-120%);
+  }
+  50% {
+    transform: translateY(1%);
+  }
+  75% {
+    transform: translateY(-5%);
   }
   100% {
-    opacity: 0;
+    transform: translateY(0%);
   }
 }
 
-@keyframes top-in {
+@keyframes top-out {
   0% {
-    opacity: 1;
+    transform: translateY(0%);
   }
   100% {
-    opacity: 0;
+    transform: translateY(-150%);
+  }
+}
+
+@keyframes bottom-in {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(-1%);
+  }
+  75% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes bottom-out {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(150%);
   }
 }

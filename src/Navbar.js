@@ -85,7 +85,7 @@ class Navbar extends Component {
           <Clock
             ticking={true}
             className="clock"
-            format={"MMMM Do hh:mm  A"}
+            format={"Do MMMM hh:mm  A"}
             timezone={"Europe/London"}
           />
         </div>

@@ -25,7 +25,7 @@ class News extends Component {
       .then(resp => resp.json())
       .then(news => this.setState({ news }, () => this.cycleHeadline()));
 
-    this.interval = setInterval(() => this.cycleHeadline(), 5000);
+    this.interval = setInterval(() => this.cycleHeadline(), 10000);
   }
 
   componentWillUnmount() {
@@ -61,7 +61,7 @@ class News extends Component {
       },
       () =>
         setTimeout(() => {
-          // this.speak(`${this.state.headline} , , ${this.state.description}`);
+          this.speak(`${this.state.headline}`);
         }, 2000)
     );
   };

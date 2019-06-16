@@ -179,7 +179,7 @@ class App extends Component {
             this.setState({
               calendarFull: "true",
               calendarFullClass: "fullcalendarin",
-              calendarClassB: "fullcalendarinb",
+              calendarFullClassB: "fullcalendarinb",
 
               tflClass: "tube clear",
               weatherClass: "weather clear",
