@@ -14,7 +14,9 @@ class WeatherDetail extends Component {
     } else {
       setTimeout(() => {
         this.speak(
-          `Today's forecast is: ${this.props.weather.daily.data[0].summary}`
+          `The forecast for the next 7 days is: ${
+            this.props.weather.daily.summary
+          }`
         );
       }, 2000);
       return this.props.weather.daily.data.map(x => (

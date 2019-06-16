@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 import Clock from "react-live-clock";
-
+import Stocks from "./Stocks";
 class Navbar extends Component {
   state = { time: "", test: "this is a test" };
 
@@ -26,6 +26,7 @@ class Navbar extends Component {
   };
 
   displayWeather = () => {
+    console.log(this.props.weather.currently);
     return `
      ${this.props.weather.currently.temperature.toFixed(1)} C \n
      ${this.props.weather.currently.summary} \n\n\n
@@ -35,15 +36,19 @@ class Navbar extends Component {
     )} C \n\n\n
       Wind: \n\n ${this.props.weather.currently.windSpeed} mph \n\n
       Chance of \n rain: \n
-       ${this.props.weather.currently.windSpeed}%
+       ${this.props.weather.currently.precipProbability.toFixed(1) * 100} %
       `;
   };
 
   speak = () => {
-    var msg = new SpeechSynthesisUtterance(
-      "Talk to speech armed. I am ready to talk to you"
-    );
-
+    console.log(`Voices #: ${speechSynthesis.getVoices().length}`);
+    console.log(speechSynthesis.getVoices());
+    speechSynthesis.getVoices().forEach(voice => {
+      console.log(voice.name, voice.lang);
+    });
+    var msg = new SpeechSynthesisUtterance("you want to move to thailand?");
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[45];
     speechSynthesis.speak(msg);
   };
 
@@ -80,7 +85,7 @@ class Navbar extends Component {
           <Clock
             ticking={true}
             className="clock"
-            format={"MMMM Do hh:mm:ss  A"}
+            format={"MMMM Do hh:mm  A"}
             timezone={"Europe/London"}
           />
         </div>

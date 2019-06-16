@@ -26,22 +26,27 @@ class App extends Component {
 
     cardsClass: "cards",
     forecastClass: "weatherDetail",
-    newsClass: "",
+    newsFullClass: "newsfullin",
+    calendarFullClass: "fullcalendarin",
+    calendarFullClassB: "fullcalendarinb",
     tflClass: "tube",
     weatherClass: "weather",
     calendarClass: "calendar",
     stocksClass: "stocks",
     videoClass: "video",
+    newsClass: "news",
 
+    newsFull: "false",
     forecast: "false",
     weatherTiles: "true",
     tfl: "true",
     google: "false",
     calendar: "true",
     commands: "true",
-    news: "false",
+    news: "true",
     stocks: "true",
     fullweather: "true",
+    calendarFull: "false",
 
     email: "",
     emailAddress: ""
@@ -70,7 +75,8 @@ class App extends Component {
                 weatherClass: "weather",
                 calendarClass: "calendar",
                 stocksClass: "stocks",
-                videoClass: "video"
+                videoClass: "video",
+                newsClass: "news"
               });
             else {
               this.setState({
@@ -78,7 +84,8 @@ class App extends Component {
                 weatherClass: "weather blank",
                 calendarClass: "calendar blank",
                 stocksClass: "stocks blank",
-                videoClass: "video blank"
+                videoClass: "video blank",
+                newsClass: "news blank"
               });
             }
             break;
@@ -108,7 +115,9 @@ class App extends Component {
                 google: "false",
                 calendar: "false",
                 commands: "false",
-                news: "false"
+                news: "false",
+                stocks: "false",
+                forecast: "false"
               });
             }
             break;
@@ -125,6 +134,7 @@ class App extends Component {
                 calendarClass: "calendar clear",
                 stocksClass: "stocks clear",
                 videoClass: "video clear",
+                newsClass: "news clear",
                 playing: false
               });
             } else {
@@ -142,14 +152,15 @@ class App extends Component {
           case "news":
             if (data.value === "true") {
               this.setState({
-                news: data.value,
-                newsClass: "newsin",
+                newsFull: data.value,
+                newsFullClass: "newsfullin",
 
                 tflClass: "tube clear",
                 weatherClass: "weather clear",
                 calendarClass: "calendar clear",
                 stocksClass: "stocks clear",
                 videoClass: "video clear",
+                newsClass: "news clear",
                 playing: false
               });
             } else {
@@ -164,22 +175,47 @@ class App extends Component {
               );
             }
             break;
+          case "calendar":
+            this.setState({
+              calendarFull: "true",
+              calendarFullClass: "fullcalendarin",
+              calendarClassB: "fullcalendarinb",
+
+              tflClass: "tube clear",
+              weatherClass: "weather clear",
+              calendarClass: "calendar clear",
+              stocksClass: "stocks clear",
+              videoClass: "video clear",
+              newsClass: "news clear",
+              playing: false
+            });
+            break;
           case "close":
             this.setState(
               {
+                cardsClass: "cards",
+                newsClass: "news",
                 tflClass: "tube",
                 weatherClass: "weather",
                 calendarClass: "calendar",
                 stocksClass: "stocks",
                 videoClass: "video",
                 forecastClass: "weatherDetailOut",
-                newsClass: "newsout"
+                newsFullClass: "newsfullout",
+                calendarFullClass: "fullcalendarout",
+                calendarFullClassB: "fullcalendaroutb",
+                tfl: "true",
+                stocks: "true",
+                weatherTiles: "true",
+                calendar: "true",
+                news: "true"
               },
               () =>
                 setTimeout(() => {
                   this.setState({
                     forecast: "false",
-                    news: "false"
+                    newsFull: "false",
+                    calendarFull: "false"
                   });
                 }, 2000)
             );
@@ -255,6 +291,11 @@ class App extends Component {
                     tflClass={this.state.tflClass}
                     calendarClass={this.state.calendarClass}
                     stocksClass={this.state.stocksClass}
+                    newsFull={this.state.newsFull}
+                    newsFullClass={this.state.newsFullClass}
+                    calendarFull={this.state.calendarFull}
+                    calendarFullClass={this.state.calendarFullClass}
+                    calendarFullClassB={this.state.calendarFullClassB}
                   />
                 )}
               />

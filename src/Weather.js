@@ -19,7 +19,7 @@ class Weather extends Component {
   render() {
     return (
       <div className={this.props.weatherClass}>
-        <div className="line" />
+        {/* <div className="line" /> */}
         {console.log()}
         {this.showHourly()}
       </div>

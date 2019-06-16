@@ -11,6 +11,7 @@ import Stocks from "./Stocks";
 import Todo from "./Todo";
 import WeatherDetail from "./WeatherDetail";
 import FullCalendar from "./FullCalendar";
+import NewsFull from "./NewsFull";
 
 class Home extends Component {
   state = {};
@@ -36,9 +37,12 @@ class Home extends Component {
         {this.props.tfl === "true" && <Tfl tflClass={this.props.tflClass} />}
 
         {this.props.news === "true" && (
-          <News
+          <News newsClass={this.props.newsClass} />
+        )}
+        {this.props.newsFull === "true" && (
+          <NewsFull
             sendEmail={this.props.sendEmail}
-            newsClass={this.props.newsClass}
+            newsFullClass={this.props.newsFullClass}
             email={this.props.email}
           />
         )}
@@ -63,8 +67,12 @@ class Home extends Component {
           />
         )}
         <Stocks stocksClass={this.props.stocksClass} />
-
-        {/* <FullCalendar /> */}
+        {this.props.calendarFull === "true" && (
+          <FullCalendar
+            calendarFullClass={this.props.calendarFullClass}
+            calendarFullClassB={this.props.calendarFullClassB}
+          />
+        )}
       </div>
     );
   }

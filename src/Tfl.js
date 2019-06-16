@@ -43,6 +43,15 @@ class Tfl extends Component {
   render() {
     return (
       <div className={this.props.tflClass}>
+        <div className="tflback">
+          <img
+            className="tflLogo"
+            src={require(`./images/tfl-logo.jpg`)}
+            alt=""
+            width="104"
+            height="34"
+          />
+        </div>
         {/* console.log("test") */}
         {this.displayStatus()}
       </div>

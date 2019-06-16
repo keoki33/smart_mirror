@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import NewsTile from "./NewsTile";
 
 var synth = window.speechSynthesis;
 
@@ -14,10 +13,10 @@ class News extends Component {
     articleUrl: ""
   };
 
-  // speak = text => {
-  //   var msg = new SpeechSynthesisUtterance(text);
-  //   speechSynthesis.speak(msg);
-  // };
+  speak = text => {
+    var msg = new SpeechSynthesisUtterance(text);
+    speechSynthesis.speak(msg);
+  };
 
   componentDidMount() {
     fetch(
@@ -30,19 +29,19 @@ class News extends Component {
   }
 
   componentWillUnmount() {
-    // synth.cancel();
+    synth.cancel();
     clearInterval(this.interval);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.email !== this.props.email) {
-  //     this.props.sendEmail(
-  //       this.state.articleUrl,
-  //       this.state.imageUrl,
-  //       this.state.headline
-  //     );
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.email !== this.props.email) {
+      this.props.sendEmail(
+        this.state.articleUrl,
+        this.state.imageUrl,
+        this.state.headline
+      );
+    }
+  }
 
   cycleHeadline = () => {
     // console.log(this.state.news.articles[this.state.newsIndex]);
@@ -69,9 +68,9 @@ class News extends Component {
 
   render() {
     return (
-      <div className={this.props.newsClass}>
+      <div className={this.props.newsFullClass}>
+        <h1>{this.state.headline}</h1>
         {/* <div className="fadeLine" /> */}
-        <h3>{this.state.headline}</h3>
         <img
           width="512"
           height="384"
@@ -80,7 +79,7 @@ class News extends Component {
           className="newsImage"
         />
 
-        {/* <p>{this.state.content}</p> */}
+        <p>{this.state.content}</p>
         {/* {this.state.content} */}
         {/* {console.log(this.state.news.articles)} */}
       </div>
