@@ -38,6 +38,7 @@ class WeatherDetail extends Component {
     return (
       <div className={this.props.forecastClass}>
         {/* <h1>Weather Detail</h1> */}
+
         {this.displayTiles()}
       </div>
     );

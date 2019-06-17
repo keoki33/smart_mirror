@@ -259,6 +259,7 @@ class App extends Component {
         <Navbar weather={this.state.weather} />
         <Router>
           <Switch>
+            {/* <Sound url={require(`./audio/rocky.mp3`)} playStatus="PLAYING" /> */}
             {this.state.on === "true" && (
               <Route
                 exact

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 import Clock from "react-live-clock";
 import Stocks from "./Stocks";
+
 class Navbar extends Component {
   state = { time: "", test: "this is a test" };
 
@@ -46,7 +47,7 @@ class Navbar extends Component {
     speechSynthesis.getVoices().forEach(voice => {
       console.log(voice.name, voice.lang);
     });
-    var msg = new SpeechSynthesisUtterance("you want to move to thailand?");
+    var msg = new SpeechSynthesisUtterance("Speech Armed");
     var voices = window.speechSynthesis.getVoices();
     msg.voice = voices[45];
     speechSynthesis.speak(msg);
@@ -83,12 +84,25 @@ class Navbar extends Component {
     }
   };
 
+  // playSound = () => {
+  //   let laser = new Audio();
+  //   laser.src = `{require(./audio/rocky.mp3)}`;
+
+  //   laser
+  //     .play()
+  //     .then(result => {
+  //       console.log(result);
+  //     })
+  //     .catch(err => {});
+  // };
+
   render() {
     return (
       <div
         className="navbar"
         onClick={event => {
           this.speak();
+          // this.playSound();
         }}
       >
         <div className="navWeather">
