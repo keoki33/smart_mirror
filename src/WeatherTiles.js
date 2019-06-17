@@ -23,13 +23,44 @@ class WeatherTiles extends Component {
     return hr + ":" + m.substr(-2);
   };
 
+  iconColor = () => {
+    if (this.props.weather.length !== 0 && this.props.weather !== undefined) {
+      switch (this.props.weather.icon) {
+        case "clear-day":
+          return "#FFE600";
+        case "clear-night":
+          return "white";
+        case "rain":
+          return "#0039BE";
+        case "snow":
+          return "#0039BE";
+        case "sleet":
+          return "#0039BE";
+        case "wind":
+          return "white";
+        case "fog":
+          return "white";
+        case "cloudy":
+          return "white";
+        case "partly-cloudy-day":
+          return "#FFE600";
+        case "partly-cloudy-night":
+          return "white";
+        default:
+          return "white";
+      }
+    } else {
+      return "white";
+    }
+  };
+
   render() {
     return (
       <div class="weatherTable">
         <div class="tw1">
           <ReactAnimatedWeather
             icon={this.showIcon()}
-            color="white"
+            color={this.iconColor()}
             size={20}
           />
         </div>

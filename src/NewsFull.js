@@ -80,6 +80,7 @@ class News extends Component {
         />
 
         <p>{this.state.content}</p>
+        <br />
         {/* {this.state.content} */}
         {/* {console.log(this.state.news.articles)} */}
       </div>

@@ -9,7 +9,7 @@ body {
   /* max-height: 100vh;
   max-width: 100vh; */
   font-weight: bold;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 #main {
@@ -148,6 +148,14 @@ body {
   -moz-animation: fadeIn ease 2s;
   -o-animation: fadeIn ease 2s;
   -ms-animation: fadeIn ease 2s;
+}
+
+.weather > h3 {
+  padding: 1%;
+  margin: 2%;
+  border: 3px double #ffffff;
+  width: 60%;
+  text-align: center;
 }
 
 .tube {
@@ -422,6 +430,12 @@ body {
 .newsfullImage {
   position: relative;
   right: 3%;
+}
+
+.newsfullin > h1,
+.newsfullin > p {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .fadeLine {

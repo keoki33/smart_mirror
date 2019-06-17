@@ -52,7 +52,36 @@ class Navbar extends Component {
     speechSynthesis.speak(msg);
   };
 
-  componentW;
+  iconColor = () => {
+    if (this.props.weather.length !== 0 && this.props.weather !== undefined) {
+      switch (this.props.weather.currently.icon) {
+        case "clear-day":
+          return "#FFE600";
+        case "clear-night":
+          return "white";
+        case "rain":
+          return "#0039BE";
+        case "snow":
+          return "#0039BE";
+        case "sleet":
+          return "#0039BE";
+        case "wind":
+          return "white";
+        case "fog":
+          return "white";
+        case "cloudy":
+          return "white";
+        case "partly-cloudy-day":
+          return "#FFE600";
+        case "partly-cloudy-night":
+          return "white";
+        default:
+          return "white";
+      }
+    } else {
+      return "white";
+    }
+  };
 
   render() {
     return (
@@ -66,7 +95,7 @@ class Navbar extends Component {
           <br />
           <ReactAnimatedWeather
             icon={this.showIcon()}
-            color="white"
+            color={this.iconColor()}
             size={80}
           />
 

@@ -21,6 +21,7 @@ class Weather extends Component {
       <div className={this.props.weatherClass}>
         {/* <div className="line" /> */}
         {console.log()}
+        <h3>Weather Forecast</h3>
         {this.showHourly()}
       </div>
     );

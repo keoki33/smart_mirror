@@ -27,13 +27,40 @@ class WeatherDetailTiles extends Component {
     }
   };
 
+  iconColor = () => {
+    switch (this.props.weather.icon) {
+      case "clear-day":
+        return "#FFE600";
+      case "clear-night":
+        return "#606060";
+      case "rain":
+        return "#0039BE";
+      case "snow":
+        return "#0039BE";
+      case "sleet":
+        return "#0039BE";
+      case "wind":
+        return "#606060";
+      case "fog":
+        return "#606060";
+      case "cloudy":
+        return "#606060";
+      case "partly-cloudy-day":
+        return "#FFE600";
+      case "partly-cloudy-night":
+        return "#606060";
+      default:
+        return "#606060";
+    }
+  };
+
   render() {
     return (
       <div className="WeatherCards">
         <h1>{this.showDay()}</h1>
         <ReactAnimatedWeather
           icon={this.props.weather.icon.toUpperCase().replace(/-/g, "_")}
-          color="black"
+          color={this.iconColor()}
           size={80}
         />
         {this.props.weather.summary}
