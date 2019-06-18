@@ -69,7 +69,7 @@ class News extends Component {
   render() {
     return (
       <div className={this.props.newsFullClass}>
-        <h1>{this.state.headline}</h1>
+        <h2>{this.state.headline}</h2>
         {/* <div className="fadeLine" /> */}
         <img
           width="512"

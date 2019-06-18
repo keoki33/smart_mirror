@@ -310,6 +310,14 @@ html {
   animation: fullscreen 0.2s ease forwards;
 }
 
+#mute {
+  position: relative;
+  left: 10px;
+  bottom: 50px;
+  font-size: 40px;
+  color: red;
+}
+
 .player {
   grid-area: v;
   max-width: 100%;
@@ -416,11 +424,15 @@ html {
   text-align: center;
   color: #ffffff;
   position: relative;
-  top: 15%;
+  top: 10px;
   grid-area: n;
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 70%;
+  max-height: 65%;
   animation: fadeIn ease 3s;
+
+  font-size: 1.56vh;
+  line-height: 2.5vh;
+  letter-spacing: 1.5px;
   /* overflow: hidden; */
 }
 
@@ -442,11 +454,16 @@ html {
   background-color: #ffffff;
   width: 37.5%;
   height: fit-content;
-  top: 10%;
+  top: 3%;
   max-height: 99%;
   z-index: 6;
   border: 5px solid #242424;
   animation: slide-in 2s ease forwards;
+
+  font-size: 2vh;
+  line-height: 2.9vh;
+  letter-spacing: 1.9px;
+  font-weight: 700;
 }
 
 .newsfullImage {
@@ -454,10 +471,11 @@ html {
   right: 3%;
 }
 
-.newsfullin > h1,
+.newsfullin > h2,
 .newsfullin > p {
   margin-left: 5%;
   margin-right: 5%;
+  padding: 5px;
 }
 
 .fadeLine {
@@ -476,10 +494,16 @@ html {
   background-color: #ffffff;
   width: 37.5%;
   height: fit-content;
-  top: 10%;
+  top: 3%;
   max-height: 99%;
   z-index: 6;
   border: 5px solid #242424;
+  animation: slide-in 2s ease forwards;
+
+  font-size: 2vh;
+  line-height: 2.9vh;
+  letter-spacing: 1.9px;
+  font-weight: 700;
   animation: slide-out 2s forwards;
 }
 
@@ -507,6 +531,11 @@ html {
   background-color: #ffffff;
   z-index: 6;
   padding: 10px;
+
+  font-size: 1.5vh;
+  line-height: 2.5vh;
+  letter-spacing: 1.5px;
+  font-weight: 700;
 }
 
 .weatherCardBottom {
@@ -577,41 +606,21 @@ html {
   animation: blank 2s forwards;
 }
 
-/* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */ /* div tables */
+.line {
+  animation: fadeIn ease 2s;
+  position: absolute;
+  top: 440px;
+  left: 300px;
+  height: 1px;
+  width: 800px;
+  border: 0px;
 
-.divTable {
-  text-align: left;
-  vertical-align: top;
-  display: table;
-  width: 100%;
-}
-
-.divTable {
-  justify-content: center;
-  align-items: center;
-}
-
-.divTableRow {
-  display: table-row;
-}
-.divTableHeading {
-  display: table-header-group;
-}
-.divTableCell {
-  display: table-cell;
-  padding: 1px 1px;
-  text-align: left !important;
-}
-.divTableHeading {
-  display: table-header-group;
-  font-weight: bold;
-}
-.divTableFoot {
-  display: table-footer-group;
-  font-weight: bold;
-}
-.divTableBody {
-  display: table-row-group;
+  background-image: linear-gradient(
+    to right,
+    rgba(221, 221, 221, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(224, 224, 224, 0)
+  );
 }
 
 /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */

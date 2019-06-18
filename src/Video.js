@@ -19,6 +19,7 @@ class Video extends Component {
           src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
           frameborder="0"
         /> */}
+
         <ReactPlayer
           width="100%"
           height="100%"
@@ -32,6 +33,12 @@ class Video extends Component {
           volume={this.props.volume}
           // onPlay={this.unMute}
         />
+
+        {this.props.muted === true && (
+          <i id="mute" class="material-icons">
+            volume_off
+          </i>
+        )}
       </div>
     );
   }
