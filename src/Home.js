@@ -66,7 +66,9 @@ class Home extends Component {
             commandValue={this.props.commandValue}
           />
         )}
-        <Stocks stocksClass={this.props.stocksClass} />
+        {this.props.calendar === "true" && (
+          <Stocks stocksClass={this.props.stocksClass} />
+        )}
         {this.props.calendarFull === "true" && (
           <FullCalendar
             calendarFullClass={this.props.calendarFullClass}

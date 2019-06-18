@@ -8,14 +8,14 @@ body {
   background: #000000;
   /* max-height: 100vh;
   max-width: 100vh; */
-  font-weight: bold;
+  font-weight: 500;
   overflow: hidden;
 }
 
-body,
+/* body,
 html {
   position: fixed;
-}
+} */
 
 #main {
 }
@@ -29,9 +29,10 @@ html {
   max-width: 99%;
   width: 99%;
   /* overflow: hidden; */
-  /* grid-template-areas:
-    "nav cards"
-    "nav cards"; */
+  font-size: 1.8vh;
+  line-height: 2vh;
+  letter-spacing: 1.5px;
+  font-family: "Poppins", sans-serif;
 }
 
 /* NAVIGATION BAR */ /* NAVIGATION BAR */ /* NAVIGATION BAR */ /* NAVIGATION BAR */ /* NAVIGATION BAR */ /* NAVIGATION BAR */ /* NAVIGATION BAR */
@@ -40,8 +41,8 @@ html {
   display: grid;
   grid-auto-rows: repeat(10 1fr);
   font-family: Orbitron;
+  letter-spacing: 3px;
   /* border: 1px solid #242424; */
-  font-weight: bold;
 
   /* float: left;
   position: relative; */
@@ -53,12 +54,10 @@ html {
   /* overflow: hidden; */
   /* writing-mode: vertical-rl;
   text-orientation: sideways; */
-
-  /* height: 100vh; */
 }
 
 .clock {
-  grid-row: 10;
+  grid-row: 9;
   /* text-align: justify; */
 
   font-size: 2.8vh;
@@ -71,8 +70,8 @@ html {
   margin-left: 15px;
   white-space: pre-line;
   font-size: 2vh;
-  line-height: 2.2vh;
-  letter-spacing: 1px;
+  line-height: 2.5vh;
+  letter-spacing: 3px;
   padding: 1px;
 }
 
@@ -88,6 +87,10 @@ html {
   opacity: 0.8;
 }
 .cards {
+  font-size: 1.8vh;
+  line-height: 2vh;
+  letter-spacing: 1.5px;
+  font-family: "Poppins", sans-serif;
   /* border: 1px solid #ff0000; */
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -98,14 +101,14 @@ html {
   max-height: 92vh;
   grid-template-areas:
     " s s s s s s s s s s "
-    " w w w w t t t c c c"
-    " w w w w t t t c c c"
-    " w w w w t t t c c c"
-    " w w w w t t t c c c"
-    " n n n n . . . . . ."
-    " n n n n v v v v v v"
-    " n n n n v v v v v v"
-    " n n n n v v v v v v"
+    " w w w w w t t t t ."
+    " w w w w w t t t t ."
+    " w w w w w t t t t ."
+    " w w w w w t t t t ."
+    " n n n . . . . c c c"
+    " n n n v v v v c c c"
+    " n n n v v v v c c c"
+    " n n n v v v v c c c"
     " . . . . . . . . . .";
 }
 
@@ -134,6 +137,7 @@ html {
   bottom: 30px;
   margin-left: 15.5%;
   font-family: "Playfair Display", serif;
+  line-height: 30px;
   font-size: 2.5vh;
   font-weight: bold;
   text-align: center;
@@ -143,11 +147,12 @@ html {
 
 .weather {
   grid-area: w;
-  width: 99%;
-
+  position: relative;
+  width: 650px;
+  left: 50px;
   /* border: 1px solid #242424; */
   padding: 5px;
-  margin-top: 5%;
+  margin-top: -60px;
   animation: fadeIn ease 2s;
   -webkit-animation: fadeIn ease 2s;
   -moz-animation: fadeIn ease 2s;
@@ -164,14 +169,17 @@ html {
 }
 
 .tube {
+  position: relative;
   grid-area: t;
-  font-size: 15px;
+  /* font-size: 15px; */
+  top: -50px;
+  left: 50px;
   height: 120%;
-  width: 99%;
+  width: 630px;
   /* border: 1px solid #242424; */
   padding: 5px;
-  perspective: 1000px;
-  background-color: transparent;
+  /* perspective: 1000px; */
+  /* background-color: transparent; */
 
   /* -webkit-box-shadow: 5px 5px 14px 1px rgba(255, 255, 255, 0.75);
   box-shadow: 5px 5px 14px 1px rgba(255, 255, 255, 0.75); */
@@ -185,17 +193,21 @@ html {
 
 .tflLogo {
   position: relative;
-  left: 25%;
+  left: 40%;
 }
 
 .tflback {
   background-color: #ffffff;
   width: 75%;
   height: 8%;
-  margin-bottom: 3%;
+  margin-bottom: 2%;
 }
 
 .tflrows {
+  font-size: 1.8vh;
+  line-height: 2vh;
+  letter-spacing: 1.5px;
+  font-family: "Poppins", sans-serif;
   display: grid;
   grid-template-columns: repeat(15, 5%);
   white-space: nowrap;
@@ -268,6 +280,8 @@ html {
 
 .video {
   grid-area: v;
+  position: relative;
+  left: -50px;
   /* padding: 5px; */
   /* border: 1px solid #494949; */
   width: 100%;
@@ -285,11 +299,11 @@ html {
   position: absolute;
   /* border: 1px solid #494949; */
 
-  max-width: 84%;
+  max-width: 83%;
   margin-top: 0.5%;
   margin-left: 0.8%;
+  max-height: 85%;
 
-  max-height: 99%;
   z-index: 6;
 
   -webkit-animation: fullscreen 0.2s ease forwards;
@@ -318,6 +332,9 @@ html {
 
 .calendar {
   grid-area: c;
+  position: relative;
+  top: 10px;
+  left: -30px;
   width: fit-content;
   height: fit-content;
   /* overflow: hidden; */
