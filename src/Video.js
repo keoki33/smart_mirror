@@ -22,9 +22,9 @@ class Video extends Component {
         <ReactPlayer
           width="100%"
           height="100%"
-          // youtubeConfig={{
-          //   playerVars: { enablejsapi: 1, autoplay: 1, playsinline: 0 }
-          // }}
+          youtubeConfig={{
+            playerVars: { enablejsapi: 1, autoplay: 1, playsinline: 0 }
+          }}
           className="player"
           url={this.props.url}
           playing={this.props.playing}

@@ -12,6 +12,11 @@ body {
   overflow: hidden;
 }
 
+body,
+html {
+  position: fixed;
+}
+
 #main {
 }
 

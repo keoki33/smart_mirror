@@ -61,7 +61,7 @@ class App extends Component {
 
     cable.subscriptions.create("UpdateChannel", {
       received: data => {
-        // console.log("update_channel received data", data.key);
+        console.log("update_channel received data", data.command);
         this.setState({
           commandlist: data.command,
           commandKey: data.key,
@@ -122,7 +122,9 @@ class App extends Component {
             }
             break;
           case "volume":
-            this.setState({ muted: false, volume: 1 });
+            data.value === "true"
+              ? this.setState({ muted: true, volume: 0 })
+              : this.setState({ muted: false, volume: 1 });
             break;
           case "forecast":
             if (data.value === "true") {
