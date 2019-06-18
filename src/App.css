@@ -146,6 +146,11 @@ html {
 }
 
 .weather {
+  font-size: 1.6vh;
+  line-height: 1.5vh;
+  letter-spacing: 1.5px;
+  font-family: "Poppins", sans-serif;
+
   grid-area: w;
   position: relative;
   width: 650px;
@@ -175,9 +180,9 @@ html {
   top: -50px;
   left: 50px;
   height: 120%;
-  width: 630px;
+  width: 610px;
   /* border: 1px solid #242424; */
-  padding: 5px;
+  padding: 4px;
   /* perspective: 1000px; */
   /* background-color: transparent; */
 
@@ -204,21 +209,22 @@ html {
 }
 
 .tflrows {
-  font-size: 1.8vh;
-  line-height: 2vh;
+  font-size: 1.6vh;
+  line-height: 1.2vh;
   letter-spacing: 1.5px;
+  font-family: "Poppins", sans-serif;
   font-family: "Poppins", sans-serif;
   display: grid;
   grid-template-columns: repeat(15, 5%);
   white-space: nowrap;
-  padding: 3px;
+  padding: 2px;
   line-height: 2vh;
 }
 
 .weatherTable {
   display: grid;
   grid-template-columns: repeat(15, 6%);
-  line-height: 2.5vh;
+  line-height: 2.3vh;
 
   /* grid-template-rows: repeat auto(fit-content, 1fr); */
 
@@ -609,10 +615,10 @@ html {
 .line {
   animation: fadeIn ease 2s;
   position: absolute;
-  top: 440px;
-  left: 300px;
+  top: 450px;
+  left: 400px;
   height: 1px;
-  width: 800px;
+  width: 600px;
   border: 0px;
 
   background-image: linear-gradient(

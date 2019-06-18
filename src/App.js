@@ -12,8 +12,10 @@ var synth = window.speechSynthesis;
 
 class App extends Component {
   state = {
+    // url:
+    //   "https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1",
     url:
-      "https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1",
+      "https://www.youtube.com/playlist?list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF",
     weather: [],
     commandList: [],
     commandValue: "",

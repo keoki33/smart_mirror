@@ -68,7 +68,6 @@ class WeatherDetailTiles extends Component {
         <br />
         <div className="weatherCardBottom">
           {/* Chance of rain: {this.props.weather.precipProbability} % */}
-          <br />
           Low: {this.props.weather.temperatureLow}
           <br />
           High {this.props.weather.temperatureHigh}
