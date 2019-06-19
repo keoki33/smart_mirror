@@ -106,7 +106,17 @@ class Navbar extends Component {
         }}
       >
         <div className="navWeather">
+          <div className="logowrap">
+            <img
+              className="flat"
+              src={require(`./images/flat.gif`)}
+              alt=""
+              width="100"
+              height="55"
+            />
+          </div>
           <br />
+
           <ReactAnimatedWeather
             icon={this.showIcon()}
             color={this.iconColor()}

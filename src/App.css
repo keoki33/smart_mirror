@@ -56,6 +56,21 @@ html {
   text-orientation: sideways; */
 }
 
+.flat {
+  position: relative;
+  margin-top: 20px;
+  left: 20px;
+}
+
+/* .logowrap {
+  top: 20px;
+  position: relative;
+  border: 1px solid #f2f7f8;
+  height: 70px;
+  background-color: #f2f7f8;
+  width: 160px;
+} */
+
 .clock {
   grid-row: 9;
   /* text-align: justify; */
