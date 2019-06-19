@@ -12,13 +12,16 @@ var synth = window.speechSynthesis;
 
 class App extends Component {
   state = {
-    url2: `https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1`,
-    url: "https://www.youtube.com/watch?v=4OGox-J9_wY",
+    url:
+      "https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1",
     weather: [],
     commandList: [],
     commandValue: "",
     commandKey: "",
     on: "true",
+    cameraClass: "camera",
+    cameraplaying: "true",
+    cameramuted: false,
 
     playing: false,
     muted: false,
@@ -126,9 +129,7 @@ class App extends Component {
               ? this.setState({ muted: true, volume: 0 })
               : this.setState({
                   muted: false,
-                  volume: 1,
-                  url:
-                    "https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1"
+                  volume: 1
                 });
             break;
           case "forecast":
@@ -233,6 +234,49 @@ class App extends Component {
               emailAddress: data.value
             });
             break;
+          case "videoone":
+            this.setState({
+              muted: false,
+              volume: 1,
+              url:
+                "https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1"
+            });
+            break;
+          case "videotwo":
+            this.setState({
+              muted: false,
+              volume: 1,
+              url: "https://www.youtube.com/watch?v=SppAPQChkzI&t=96s"
+            });
+            break;
+          case "cameraon":
+            this.setState({
+              cameraClass: "camera",
+              cameraplaying: true,
+              cameramuted: false,
+
+              tflClass: "tube clear",
+              weatherClass: "weather clear",
+              calendarClass: "calendar clear",
+              stocksClass: "stocks clear",
+              videoClass: "video clear",
+              newsClass: "news clear"
+            });
+            break;
+          case "cameraoff":
+            this.setState({
+              cameraClass: "cameraoff",
+              cameraplaying: false,
+              cameramuted: true,
+
+              tflClass: "tube",
+              weatherClass: "weather",
+              calendarClass: "calendar",
+              stocksClass: "stocks",
+              videoClass: "video",
+              newsClass: "news"
+            });
+            break;
           default:
         }
       }
@@ -304,6 +348,9 @@ class App extends Component {
                     calendarFull={this.state.calendarFull}
                     calendarFullClass={this.state.calendarFullClass}
                     calendarFullClassB={this.state.calendarFullClassB}
+                    cameraClass={this.state.cameraClass}
+                    cameraplaying={this.state.cameraplaying}
+                    cameramuted={this.state.cameramuted}
                   />
                 )}
               />

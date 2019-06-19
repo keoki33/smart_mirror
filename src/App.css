@@ -629,6 +629,27 @@ html {
   );
 }
 
+.camera {
+  position: fixed;
+
+  /* max-width: 83%; */
+  margin-left: 300px;
+  margin-top: 10px;
+  /* max-height: 200px; */
+  /* height: 100px; */
+  max-width: 480px;
+
+  z-index: 6;
+
+  -webkit-animation: fullscreen 0.2s ease forwards;
+  animation: fullscreen 0.2s ease forwards;
+}
+
+.cameraoff {
+  position: fixed;
+  opacity: 0;
+}
+
 /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */ /* animations  */
 
 @keyframes fadeIn {

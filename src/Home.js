@@ -12,6 +12,7 @@ import Todo from "./Todo";
 import WeatherDetail from "./WeatherDetail";
 import FullCalendar from "./FullCalendar";
 import NewsFull from "./NewsFull";
+import Camera from "./Camera";
 
 class Home extends Component {
   state = {};
@@ -21,7 +22,12 @@ class Home extends Component {
   render() {
     return (
       <div className={this.props.cardsClass}>
-        {this.props.news === "true" && <hr className="line" />}
+        {/* {this.props.news === "true" && <hr className="line" />} */}
+        <Camera
+          cameramuted={this.props.cameramuted}
+          cameraplaying={this.props.cameraplaying}
+          cameraClass={this.props.cameraClass}
+        />
         {this.props.weatherTiles === "true" && (
           <Weather
             weatherClass={this.props.weatherClass}
