@@ -12,8 +12,8 @@ var synth = window.speechSynthesis;
 
 class App extends Component {
   state = {
-    url: `https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1`,
-
+    url2: `https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1`,
+    url: "https://www.youtube.com/watch?v=4OGox-J9_wY",
     weather: [],
     commandList: [],
     commandValue: "",
@@ -124,7 +124,12 @@ class App extends Component {
           case "volume":
             data.value === "true"
               ? this.setState({ muted: true, volume: 0 })
-              : this.setState({ muted: false, volume: 1 });
+              : this.setState({
+                  muted: false,
+                  volume: 1,
+                  url:
+                    "https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1"
+                });
             break;
           case "forecast":
             if (data.value === "true") {

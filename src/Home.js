@@ -76,6 +76,7 @@ class Home extends Component {
             calendarFullClassB={this.props.calendarFullClassB}
           />
         )}
+        {/* <Google /> */}
       </div>
     );
   }
