@@ -12,8 +12,20 @@ var synth = window.speechSynthesis;
 
 class App extends Component {
   state = {
-    url:
-      "https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1",
+    urlIndex: 0,
+    urlList: [
+      "https://www.youtube.com/watch?v=W4brAobC2Hc",
+      "https://www.youtube.com/watch?v=hbfl4Rhsm3w",
+      "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
+      "https://www.youtube.com/watch?v=SppAPQChkzI&t=96s?autoplay=1",
+      "https://www.youtube.com/watch?v=jeGT1VXwfx4",
+      "https://www.youtube.com/watch?v=Ftm2uv7-Ybw",
+      "https://www.youtube.com/watch?v=mWyak0g5LLI&t=200s",
+      "https://www.youtube.com/watch?v=z9DJn5EMtZQ",
+      "https://www.youtube.com/watch?v=g-ol9_wyx-o",
+      "https://www.youtube.com/watch?v=r8cexmYOknI&t=10s"
+    ],
+    url: "https://www.youtube.com/watch?v=lD2LfoCV4AI",
     weather: [],
     commandList: [],
     commandValue: "",
@@ -55,7 +67,36 @@ class App extends Component {
     emailAddress: ""
   };
 
-  whatever = () => {};
+  nextVideo = () => {
+    if (this.state.urlIndex == this.state.urlList.length) {
+      this.setState({ urlIndex: 0 });
+    }
+
+    this.setState({
+      url: this.state.urlList[this.state.urlIndex],
+      // muted: false,
+      // volume: 1,
+      urlIndex: this.state.urlIndex + 1
+    });
+  };
+
+  previousVideo = () => {
+    if (this.state.urlIndex == 0) {
+      this.setState({ urlIndex: this.state.urlList.length });
+    } else {
+      this.setState(
+        {
+          urlIndex: this.state.urlIndex - 1
+        },
+        () =>
+          this.setState({
+            url: this.state.urlList[this.state.urlIndex]
+            // muted: false,
+            // volume: 1
+          })
+      );
+    }
+  };
 
   componentDidMount() {
     var cable = ActionCable.createConsumer(
@@ -235,19 +276,22 @@ class App extends Component {
             });
             break;
           case "videoone":
-            this.setState({
-              muted: false,
-              volume: 1,
-              url:
-                "https://www.youtube.com/watch?v=W4brAobC2Hc&list=PL2agQcX85d2TCqH3Ptdax5QImZJwIt9TF&index=12&t=37s?autoplay=1"
-            });
+            // this.setState({
+            //   muted: false,
+            //   volume: 1,
+            //   url:
+            //     "https://www.youtube.com/watch?v=hbfl4Rhsm3w&list=RDhbfl4Rhsm3w&start_radio=1"
+            // });
+            this.previousVideo();
             break;
           case "videotwo":
-            this.setState({
-              muted: false,
-              volume: 1,
-              url: "https://www.youtube.com/watch?v=SppAPQChkzI&t=96s"
-            });
+            this.nextVideo();
+            // this.setState({
+            //   muted: false,
+            //   volume: 1,
+            //   url:
+            //     "https://www.youtube.com/watch?v=SppAPQChkzI&t=96s?autoplay=1"
+            // });
             break;
           case "cameraon":
             this.setState({

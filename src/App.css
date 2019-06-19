@@ -322,6 +322,7 @@ html {
   bottom: 50px;
   font-size: 40px;
   color: red;
+  animation: fadeIn ease 0.5s infinite alternate;
 }
 
 .player {
