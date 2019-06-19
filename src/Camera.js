@@ -21,13 +21,13 @@ class Camera extends Component {
         /> */}
 
         <ReactPlayer
-          width="50%"
-          height="50%"
+          width="100%"
+          height="100%"
           // youtubeConfig={{
           //     playerVars: { enablejsapi: 1, autoplay: 1, playsinline: 0 }
           // }}
           className={this.props.cameraClass}
-          url="https://www.facebook.com/100009619878328/videos/2229928410671133/"
+          url="https://www.facebook.com/100009619878328/videos/2230122710651703/"
           playing={this.props.cameraplaying}
           muted={this.props.cameramuted}
           volume="1"
