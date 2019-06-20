@@ -46,7 +46,7 @@ class News extends Component {
   cycleHeadline = () => {
     // console.log(this.state.news.articles[this.state.newsIndex]);
     // console.log(this.state.newsIndex);
-    if (this.state.newsIndex == this.state.news.articles.length) {
+    if (this.state.newsIndex == this.state.news.articles.length - 1) {
       this.setState({ newsIndex: 0 });
     }
 

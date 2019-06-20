@@ -17,7 +17,8 @@ const quotes = [
   `Walking on water and developing software from a specification are easy if both are frozen.`,
   `Try to be a rainbow in someone’s cloud.`,
   `Happiness is not something you postpone for the future; it is something you design for the present.`,
-  "Be yourself; everyone else is already taken."
+  "Be yourself; everyone else is already taken.",
+  "How lucky I am to have something that makes saying goodbye so hard."
 ];
 
 var msg = new SpeechSynthesisUtterance("Hello World");
