@@ -27,7 +27,7 @@ class Camera extends Component {
           //     playerVars: { enablejsapi: 1, autoplay: 1, playsinline: 0 }
           // }}
           className={this.props.cameraClass}
-          url="https://www.facebook.com/100009619878328/videos/2230122710651703/"
+          url="https://www.facebook.com/100009619878328/videos/2230569927273648/"
           playing={this.props.cameraplaying}
           muted={this.props.cameramuted}
           volume="1"
