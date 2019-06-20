@@ -18,7 +18,7 @@ class WeatherDetail extends Component {
             this.props.weather.daily.summary
           }`
         );
-      }, 2000);
+      }, 1000);
       return this.props.weather.daily.data.map(x => (
         <WeatherDetailTiles id={x.time} weather={x} />
       ));

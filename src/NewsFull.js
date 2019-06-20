@@ -62,7 +62,7 @@ class News extends Component {
       () =>
         setTimeout(() => {
           this.speak(`${this.state.headline}`);
-        }, 2000)
+        }, 1000)
     );
   };
 

@@ -23,7 +23,10 @@ class App extends Component {
       "https://www.youtube.com/watch?v=mWyak0g5LLI&t=200s",
       "https://www.youtube.com/watch?v=z9DJn5EMtZQ",
       "https://www.youtube.com/watch?v=g-ol9_wyx-o",
-      "https://www.youtube.com/watch?v=r8cexmYOknI&t=10s"
+      "https://www.youtube.com/watch?v=r8cexmYOknI&t=10s",
+      "https://www.youtube.com/watch?v=H28TWyDJJ6I&t=5s",
+      "https://www.youtube.com/watch?v=8XJ6r4U171I",
+      "https://www.youtube.com/watch?v=Qrj-p3mSOh0"
     ],
     url: "https://www.youtube.com/watch?v=lD2LfoCV4AI",
     weather: [],
@@ -68,21 +71,32 @@ class App extends Component {
   };
 
   nextVideo = () => {
-    if (this.state.urlIndex == this.state.urlList.length) {
-      this.setState({ urlIndex: 0 });
+    if (this.state.urlIndex == this.state.urlList.length - 1) {
+      this.setState({ urlIndex: 0 }, () =>
+        this.setState({
+          url: this.state.urlList[this.state.urlIndex],
+          playing: true
+        })
+      );
+    } else {
+      this.setState(
+        {
+          urlIndex: this.state.urlIndex + 1
+          // muted: false,
+          // volume: 1,
+        },
+        () =>
+          this.setState({
+            url: this.state.urlList[this.state.urlIndex],
+            playing: true
+          })
+      );
     }
-
-    this.setState({
-      url: this.state.urlList[this.state.urlIndex],
-      // muted: false,
-      // volume: 1,
-      urlIndex: this.state.urlIndex + 1
-    });
   };
 
   previousVideo = () => {
     if (this.state.urlIndex == 0) {
-      this.setState({ urlIndex: this.state.urlList.length });
+      this.setState({ urlIndex: this.state.urlList.length - 1 });
     } else {
       this.setState(
         {
@@ -266,7 +280,7 @@ class App extends Component {
                     newsFull: "false",
                     calendarFull: "false"
                   });
-                }, 2000)
+                }, 1000)
             );
             break;
           case "email":
@@ -298,6 +312,7 @@ class App extends Component {
               cameraClass: "camera",
               cameraplaying: true,
               cameramuted: false,
+              playing: false,
 
               tflClass: "tube clear",
               weatherClass: "weather clear",

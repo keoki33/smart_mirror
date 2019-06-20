@@ -397,7 +397,7 @@ html {
   left: 17%;
   top: 2%;
   width: 100%;
-  animation: top-out ease 2s forwards;
+  animation: top-out ease 1s forwards;
 }
 
 .fullcalendarinb {
@@ -423,7 +423,7 @@ html {
   z-index: 6;
   left: 17%;
   top: 70%;
-  animation: bottom-out ease 2s forwards;
+  animation: bottom-out ease 1s forwards;
 }
 
 .todo {
@@ -524,13 +524,13 @@ html {
   max-height: 99%;
   z-index: 6;
   border: 5px solid #242424;
-  animation: slide-in 2s ease forwards;
+  animation: slide-in 1s ease forwards;
 
   font-size: 2vh;
   line-height: 2.9vh;
   letter-spacing: 1.9px;
   font-weight: 700;
-  animation: slide-out 2s forwards;
+  animation: slide-out 1s forwards;
 }
 
 .command {
@@ -599,7 +599,7 @@ html {
   justify-content: center;
   width: 83%;
   margin: 0 auto;
-  animation: slide-out 2s ease forwards;
+  animation: slide-out 1s ease forwards;
   z-index: 6;
 }
 
