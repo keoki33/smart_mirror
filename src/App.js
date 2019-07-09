@@ -35,7 +35,7 @@ class App extends Component {
     commandKey: "",
     on: "true",
     cameraClass: "camera",
-    cameraplaying: "true",
+    cameraplaying: "false",
     cameramuted: false,
 
     playing: false,
