@@ -137,6 +137,7 @@ class App extends Component {
                 newsClass: "news"
               });
             else {
+              this.closeWindow()
               this.setState({
                 tflClass: "tube blank",
                 weatherClass: "weather blank",
@@ -165,6 +166,8 @@ class App extends Component {
                 news: "false"
               });
             else {
+              this.closeWindow()
+              setTimeout(() => {
               this.setState({
                 cardsClass: "",
                 videoClass: data.value,
@@ -177,6 +180,7 @@ class App extends Component {
                 stocks: "false",
                 forecast: "false"
               });
+            }, 1000)
             }
             break;
           case "volume":
@@ -189,17 +193,7 @@ class App extends Component {
             break;
           case "forecast":
             if (data.value === "true") {
-              this.setState({
-                forecast: data.value,
-                forecastClass: "weatherDetail",
-                tflClass: "tube clear",
-                weatherClass: "weather clear",
-                calendarClass: "calendar clear",
-                stocksClass: "stocks clear",
-                videoClass: "video clear",
-                newsClass: "news clear",
-                playing: false
-              });
+             this.showForecast()
             } else {
               this.setState(
                 {
@@ -208,12 +202,14 @@ class App extends Component {
                 () =>
                   setTimeout(() => {
                     this.setState({ forecast: "false" });
-                  }, 2000)
+                  }, 1000)
               );
             }
             break;
           case "news":
             if (data.value === "true") {
+              this.closeWindow()
+              setTimeout(() => {
               this.setState({
                 newsFull: data.value,
                 newsFullClass: "newsfullin",
@@ -225,6 +221,7 @@ class App extends Component {
                 newsClass: "news clear",
                 playing: false
               });
+            }, 1000)
             } else {
               this.setState(
                 {
@@ -238,6 +235,8 @@ class App extends Component {
             }
             break;
           case "calendar":
+              this.closeWindow()
+              setTimeout(() => {
             this.setState({
               calendarFull: "true",
               calendarFullClass: "fullcalendarin",
@@ -248,9 +247,10 @@ class App extends Component {
               calendarClass: "calendar clear",
               stocksClass: "stocks clear",
               videoClass: "video clear",
-              newsClass: "news clear",
-              playing: false
+              newsClass: "news clear"
+             
             });
+          }, 1000)
             break;
           case "close":
             this.closeWindow()
@@ -337,7 +337,6 @@ class App extends Component {
         cameraplaying: false,
         cameramuted: true,
 
-        
       },
       () =>
         setTimeout(() => {
@@ -348,6 +347,23 @@ class App extends Component {
           });
         }, 1000)
     );
+  }
+
+  showForecast = () => {
+    this.closeWindow()
+    setTimeout(() => {
+    this.setState({
+      forecast: "true",
+      forecastClass: "weatherDetail",
+      tflClass: "tube clear",
+      weatherClass: "weather clear",
+      calendarClass: "calendar clear",
+      stocksClass: "stocks clear",
+      videoClass: "video clear",
+      newsClass: "news clear",
+      playing: false
+    });
+  }, 1000)
   }
 
   render() {
