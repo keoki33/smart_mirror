@@ -21,7 +21,7 @@ class TflTiles extends Component {
       <div className="tflrows">
         <div className="t1">
           <img
-            src={require(`./images/${this.props.line.name}.png`)}
+            src={require(`../images/${this.props.line.name}.png`)}
             alt=""
             width="15"
             height="15"

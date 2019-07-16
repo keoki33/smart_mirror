@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import Tfl from "./Tfl";
+import Tfl from "./Tfl/Tfl.js";
 import Google from "./Google";
 import Video from "./Video";
-import Weather from "./Weather";
-import Calendar from "./Calendar";
+import Weather from "./Weather/Weather";
+import Calendar from "./Calendar/Calendar";
 
 import CommandList from "./CommandList";
-import News from "./News";
+import News from "./News/News";
 import Stocks from "./Stocks";
 import Todo from "./Todo";
-import WeatherDetail from "./WeatherDetail";
-import FullCalendar from "./FullCalendar";
-import NewsFull from "./NewsFull";
+import WeatherDetail from "./Weather/WeatherDetail";
+import FullCalendar from "./Calendar/FullCalendar";
+import NewsFull from "./News/NewsFull";
 import Camera from "./Camera";
 
 class Home extends Component {

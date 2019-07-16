@@ -217,7 +217,6 @@ class App extends Component {
               this.setState({
                 newsFull: data.value,
                 newsFullClass: "newsfullin",
-
                 tflClass: "tube clear",
                 weatherClass: "weather clear",
                 calendarClass: "calendar clear",
@@ -254,34 +253,7 @@ class App extends Component {
             });
             break;
           case "close":
-            this.setState(
-              {
-                cardsClass: "cards",
-                newsClass: "news",
-                tflClass: "tube",
-                weatherClass: "weather",
-                calendarClass: "calendar",
-                stocksClass: "stocks",
-                videoClass: "video",
-                forecastClass: "weatherDetailOut",
-                newsFullClass: "newsfullout",
-                calendarFullClass: "fullcalendarout",
-                calendarFullClassB: "fullcalendaroutb",
-                tfl: "true",
-                stocks: "true",
-                weatherTiles: "true",
-                calendar: "true",
-                news: "true"
-              },
-              () =>
-                setTimeout(() => {
-                  this.setState({
-                    forecast: "false",
-                    newsFull: "false",
-                    calendarFull: "false"
-                  });
-                }, 1000)
-            );
+            this.closeWindow()
             break;
           case "email":
             this.setState({
@@ -290,23 +262,11 @@ class App extends Component {
             });
             break;
           case "videoone":
-            // this.setState({
-            //   muted: false,
-            //   volume: 1,
-            //   url:
-            //     "https://www.youtube.com/watch?v=hbfl4Rhsm3w&list=RDhbfl4Rhsm3w&start_radio=1"
-            // });
-            this.previousVideo();
+                     this.previousVideo();
             break;
           case "videotwo":
             this.nextVideo();
-            // this.setState({
-            //   muted: false,
-            //   volume: 1,
-            //   url:
-            //     "https://www.youtube.com/watch?v=SppAPQChkzI&t=96s?autoplay=1"
-            // });
-            break;
+                 break;
           case "cameraon":
             this.setState({
               cameraClass: "camera",
@@ -323,18 +283,7 @@ class App extends Component {
             });
             break;
           case "cameraoff":
-            this.setState({
-              cameraClass: "cameraoff",
-              cameraplaying: false,
-              cameramuted: true,
-
-              tflClass: "tube",
-              weatherClass: "weather",
-              calendarClass: "calendar",
-              stocksClass: "stocks",
-              videoClass: "video",
-              newsClass: "news"
-            });
+        this.closeWindow()
             break;
           default:
         }
@@ -346,6 +295,8 @@ class App extends Component {
       .then(resp => resp.json())
       .then(x => this.setState({ weather: x }));
   }
+
+  
 
   sendEmail = (url, imageurl, headline) => {
     fetch("https://boiling-tundra-71042.herokuapp.com/email", {
@@ -361,6 +312,43 @@ class App extends Component {
       })
     });
   };
+
+  closeWindow = () => {
+    this.setState(
+      {
+        cardsClass: "cards",
+        newsClass: "news",
+        tflClass: "tube",
+        weatherClass: "weather",
+        calendarClass: "calendar",
+        stocksClass: "stocks",
+        videoClass: "video",
+        forecastClass: "weatherDetailOut",
+        newsFullClass: "newsfullout",
+        calendarFullClass: "fullcalendarout",
+        calendarFullClassB: "fullcalendaroutb",
+        tfl: "true",
+        stocks: "true",
+        weatherTiles: "true",
+        calendar: "true",
+        news: "true",
+
+        cameraClass: "cameraoff",
+        cameraplaying: false,
+        cameramuted: true,
+
+        
+      },
+      () =>
+        setTimeout(() => {
+          this.setState({
+            forecast: "false",
+            newsFull: "false",
+            calendarFull: "false"
+          });
+        }, 1000)
+    );
+  }
 
   render() {
     return (
