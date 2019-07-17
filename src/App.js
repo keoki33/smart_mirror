@@ -363,7 +363,7 @@ class App extends Component {
       newsClass: "news clear",
       playing: false
     });
-  }, 1000)
+  }, 1100)
   }
 
   render() {
@@ -414,6 +414,8 @@ class App extends Component {
                     cameraClass={this.state.cameraClass}
                     cameraplaying={this.state.cameraplaying}
                     cameramuted={this.state.cameramuted}
+                    showForecast={this.showForecast}
+                    closeWindow={this.closeWindow}
                   />
                 )}
               />

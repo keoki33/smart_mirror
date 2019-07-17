@@ -30,6 +30,7 @@ class Home extends Component {
         />
         {this.props.weatherTiles === "true" && (
           <Weather
+            showForecast={this.props.showForecast}
             weatherClass={this.props.weatherClass}
             className="WeatherCards"
             weather={this.props.weather}
@@ -39,6 +40,7 @@ class Home extends Component {
           <WeatherDetail
             forecastClass={this.props.forecastClass}
             weather={this.props.weather}
+            closeWindow={this.props.closeWindow}
           />
         )}
         {this.props.tfl === "true" && <Tfl tflClass={this.props.tflClass} />}

@@ -18,7 +18,9 @@ class Weather extends Component {
 
   render() {
     return (
-      <div className={this.props.weatherClass}>
+      <div className={this.props.weatherClass}
+      onClick={ event => {this.props.showForecast()}}
+      >
         {/* <div className="line" /> */}
         {console.log()}
         <h3 className="weatherhead">Weather Forecast</h3>

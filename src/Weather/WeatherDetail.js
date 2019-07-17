@@ -36,7 +36,9 @@ class WeatherDetail extends Component {
 
   render() {
     return (
-      <div className={this.props.forecastClass}>
+      <div className={this.props.forecastClass}
+      onClick={ event => {this.props.closeWindow()}}
+      >
         {/* <h1>Weather Detail</h1> */}
 
         {this.displayTiles()}
