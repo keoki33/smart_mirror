@@ -25,7 +25,7 @@ class FullCalendar extends Component {
             frameborder="0"
             scrolling="no"
           />{" "}
-          */}
+          
           {/* <ul>
             todo:
             <li>Blah blah: 12/5</li>

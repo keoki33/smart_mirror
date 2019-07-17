@@ -61,7 +61,7 @@ class WeatherTiles extends Component {
           <ReactAnimatedWeather
             icon={this.showIcon()}
             color={this.iconColor()}
-            size={21}
+            size={21}      
           />
         </div>
         <div class="tw2">{this.showTime()}</div>
