@@ -41,15 +41,8 @@ class Navbar extends Component {
       `;
   };
 
-  speak = () => {
-    console.log(`Voices #: ${speechSynthesis.getVoices().length}`);
-    console.log(speechSynthesis.getVoices());
-    speechSynthesis.getVoices().forEach(voice => {
-      console.log(voice.name, voice.lang);
-    });
-    var msg = new SpeechSynthesisUtterance("Speech Armed");
-    var voices = window.speechSynthesis.getVoices();
-    msg.voice = voices[45];
+  speak = text => {
+    var msg = new SpeechSynthesisUtterance(`${this.props.weather.currently.summary}`);
     speechSynthesis.speak(msg);
   };
 
