@@ -42,7 +42,9 @@ class Tfl extends Component {
 
   render() {
     return (
-      <div className={this.props.tflClass}>
+      <div className={this.props.tflClass}
+      onClick={ event => {alert("Use remote to control website")}}
+      >
         <div className="tflback">
           <img
             className="tflLogo"

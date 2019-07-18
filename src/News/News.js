@@ -69,7 +69,9 @@ class News extends Component {
 
   render() {
     return (
-      <div className={this.props.newsClass}>
+      <div className={this.props.newsClass}
+      onClick={ event => {alert("Use remote to control website")}}
+      >
         {/* <div className="fadeLine" /> */}
         <h3>{this.state.headline}</h3>
         <img
