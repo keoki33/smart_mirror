@@ -113,6 +113,9 @@ class App extends Component {
   };
 
   componentDidMount() {
+    alert(
+      "Hello and welcome to my mirror. 1. Click on Flatiron Icon and 2. Play then pause Youtube Video. Needs to be done on first load or if you refresh the screen to allow controls to work. Use remote control website to control. All commands take 1-2 seconds to take effect. Thank you for trying my site"
+    );
     var cable = ActionCable.createConsumer(
       "wss://boiling-tundra-71042.herokuapp.com/cable"
     );
@@ -137,7 +140,7 @@ class App extends Component {
                 newsClass: "news"
               });
             else {
-              this.closeWindow()
+              this.closeWindow();
               this.setState({
                 tflClass: "tube blank",
                 weatherClass: "weather blank",
@@ -166,21 +169,21 @@ class App extends Component {
                 news: "false"
               });
             else {
-              this.closeWindow()
+              this.closeWindow();
               setTimeout(() => {
-              this.setState({
-                cardsClass: "",
-                videoClass: data.value,
-                weatherTiles: "false",
-                tfl: "false",
-                google: "false",
-                calendar: "false",
-                commands: "false",
-                news: "false",
-                stocks: "false",
-                forecast: "false"
-              });
-            }, 1000)
+                this.setState({
+                  cardsClass: "",
+                  videoClass: data.value,
+                  weatherTiles: "false",
+                  tfl: "false",
+                  google: "false",
+                  calendar: "false",
+                  commands: "false",
+                  news: "false",
+                  stocks: "false",
+                  forecast: "false"
+                });
+              }, 1000);
             }
             break;
           case "volume":
@@ -193,7 +196,7 @@ class App extends Component {
             break;
           case "forecast":
             if (data.value === "true") {
-             this.showForecast()
+              this.showForecast();
             } else {
               this.setState(
                 {
@@ -208,20 +211,20 @@ class App extends Component {
             break;
           case "news":
             if (data.value === "true") {
-              this.closeWindow()
+              this.closeWindow();
               setTimeout(() => {
-              this.setState({
-                newsFull: data.value,
-                newsFullClass: "newsfullin",
-                tflClass: "tube clear",
-                weatherClass: "weather clear",
-                calendarClass: "calendar clear",
-                stocksClass: "stocks clear",
-                videoClass: "video clear",
-                newsClass: "news clear",
-                playing: false
-              });
-            }, 1000)
+                this.setState({
+                  newsFull: data.value,
+                  newsFullClass: "newsfullin",
+                  tflClass: "tube clear",
+                  weatherClass: "weather clear",
+                  calendarClass: "calendar clear",
+                  stocksClass: "stocks clear",
+                  videoClass: "video clear",
+                  newsClass: "news clear",
+                  playing: false
+                });
+              }, 1000);
             } else {
               this.setState(
                 {
@@ -235,25 +238,24 @@ class App extends Component {
             }
             break;
           case "calendar":
-              this.closeWindow()
-              setTimeout(() => {
-            this.setState({
-              calendarFull: "true",
-              calendarFullClass: "fullcalendarin",
-              calendarFullClassB: "fullcalendarinb",
+            this.closeWindow();
+            setTimeout(() => {
+              this.setState({
+                calendarFull: "true",
+                calendarFullClass: "fullcalendarin",
+                calendarFullClassB: "fullcalendarinb",
 
-              tflClass: "tube clear",
-              weatherClass: "weather clear",
-              calendarClass: "calendar clear",
-              stocksClass: "stocks clear",
-              videoClass: "video clear",
-              newsClass: "news clear"
-             
-            });
-          }, 1000)
+                tflClass: "tube clear",
+                weatherClass: "weather clear",
+                calendarClass: "calendar clear",
+                stocksClass: "stocks clear",
+                videoClass: "video clear",
+                newsClass: "news clear"
+              });
+            }, 1000);
             break;
           case "close":
-            this.closeWindow()
+            this.closeWindow();
             break;
           case "email":
             this.setState({
@@ -262,11 +264,11 @@ class App extends Component {
             });
             break;
           case "videoone":
-                     this.previousVideo();
+            this.previousVideo();
             break;
           case "videotwo":
             this.nextVideo();
-                 break;
+            break;
           case "cameraon":
             this.setState({
               cameraClass: "camera",
@@ -283,7 +285,7 @@ class App extends Component {
             });
             break;
           case "cameraoff":
-        this.closeWindow()
+            this.closeWindow();
             break;
           default:
         }
@@ -296,8 +298,6 @@ class App extends Component {
       .then(resp => resp.json())
       .then(x => this.setState({ weather: x }));
   }
-
-  
 
   sendEmail = (url, imageurl, headline) => {
     fetch("https://boiling-tundra-71042.herokuapp.com/email", {
@@ -336,8 +336,7 @@ class App extends Component {
 
         cameraClass: "cameraoff",
         cameraplaying: false,
-        cameramuted: true,
-
+        cameramuted: true
       },
       () =>
         setTimeout(() => {
@@ -348,24 +347,24 @@ class App extends Component {
           });
         }, 1000)
     );
-  }
+  };
 
   showForecast = () => {
-    this.closeWindow()
+    this.closeWindow();
     setTimeout(() => {
-    this.setState({
-      forecast: "true",
-      forecastClass: "weatherDetail",
-      tflClass: "tube clear",
-      weatherClass: "weather clear",
-      calendarClass: "calendar clear",
-      stocksClass: "stocks clear",
-      videoClass: "video clear",
-      newsClass: "news clear",
-      playing: false
-    });
-  }, 1100)
-  }
+      this.setState({
+        forecast: "true",
+        forecastClass: "weatherDetail",
+        tflClass: "tube clear",
+        weatherClass: "weather clear",
+        calendarClass: "calendar clear",
+        stocksClass: "stocks clear",
+        videoClass: "video clear",
+        newsClass: "news clear",
+        playing: false
+      });
+    }, 1100);
+  };
 
   render() {
     return (
