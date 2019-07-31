@@ -69,8 +69,13 @@ class News extends Component {
 
   render() {
     return (
-      <div className={this.props.newsClass}
-      onClick={ event => {alert("Use remote to control website")}}
+      <div
+        className={this.props.newsClass}
+        onClick={event => {
+          alert(
+            "Hello and welcome to my mirror. 1. Click on Flatiron Icon and 2. Play then pause Youtube Video. Needs to be done on first load or if you refresh the screen to allow controls to work. Use remote control website to control. All commands take 1-2 seconds to take effect. Thank you for trying my site"
+          );
+        }}
       >
         {/* <div className="fadeLine" /> */}
         <h3>{this.state.headline}</h3>

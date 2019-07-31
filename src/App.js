@@ -113,9 +113,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    alert(
-      "Hello and welcome to my mirror. 1. Click on Flatiron Icon and 2. Play then pause Youtube Video. Needs to be done on first load or if you refresh the screen to allow controls to work. Use remote control website to control. All commands take 1-2 seconds to take effect. Thank you for trying my site"
-    );
     var cable = ActionCable.createConsumer(
       "wss://boiling-tundra-71042.herokuapp.com/cable"
     );
@@ -297,6 +294,9 @@ class App extends Component {
     )
       .then(resp => resp.json())
       .then(x => this.setState({ weather: x }));
+    alert(
+      "Hello and welcome to my mirror. 1. Click on Flatiron Icon and 2. Play then pause Youtube Video. Needs to be done on first load or if you refresh the screen to allow controls to work. Use remote control website to control. All commands take 1-2 seconds to take effect. Thank you for trying my site"
+    );
   }
 
   sendEmail = (url, imageurl, headline) => {
